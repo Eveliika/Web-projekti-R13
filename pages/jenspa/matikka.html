@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematiikka</title>
+    <script src="js/matikka.js"></script>
+</head>
+<body onload="startData()">
+    <main>
+        <section>
+            <h2>Testaa laskutaitosi</h2>
+            <p>Tähän tulee ohjeet tehtäviä varten...</p>
+        </section>
+        <section>
+            <h4>Tehtävä 1</h4>
+            <div>
+                <label id="number1a"></label> + <label id="number1b"></label> = 
+                <input id="answer1">
+                <button onclick="checkAnswerOne()">Lukitse vastaus</button>
+            </div>
+        </section>
+        <section>
+            <h4>Tehtävä 2</h4>
+            <div>
+                <label id="number2a"></label> * <label id="number2b"></label> = 
+                <input id="answer2">
+                <button onclick="checkAnswerTwo()">Lukitse vastaus</button>
+            </div>
+        </section>
+        <section>
+            <h4>Tehtävä 3</h4>
+            <div>
+                <label id="number3a"></label> + <label id="number3b"></label> - <label id="number3c"></label> = 
+                <input id="answer3">
+                <button onclick="checkAnswerThree()">Lukitse vastaus</button>
+            </div>
+        </section>
+        <section>
+            <h4>Tehtävä 4</h4>
+            <div>
+                <label id="number4a"></label> : <label id="number4b"></label> = 
+                <input id="answer4">
+                <button onclick="checkAnswerFour()">Lukitse vastaus</button>
+            </div>
+        </section>
+        <section>
+            <h4>Tehtävä 5</h4>
+            <div>
+                <label id="number5a"></label> * <label id="number5b"></label> - <label id="number5c"></label> = 
+                <input id="answer5">
+                <button onclick="checkAnswerFive()">Lukitse vastaus</button><br><br>
+            </div>
+        </section>
+        <section>
+            <div>
+                <button onclick="finishTest()">Lopeta testi</button>
+            </div>
+            <div>
+                <label id="classification"></label>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
