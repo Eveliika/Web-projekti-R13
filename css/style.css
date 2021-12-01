@@ -1,6 +1,4 @@
-body {
-    color: aliceblue;
-}
+
 
 /* Tallennan tähän sivustolla käytettävät värit*/
 .class {
@@ -10,12 +8,18 @@ body {
      #DE0052 #A62A58 #900035 #EE3C7E #EE6B9C;
 }
 
+.container {
+    background-color: #61D8A2;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+}
+
 footer {
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #00733E;
     text-align: center;
-    position: static;
 }
