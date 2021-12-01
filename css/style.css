@@ -9,3 +9,13 @@ body {
      #FF9500	#BF8430 #A66100, #FFB040 #FFC573
      #DE0052 #A62A58 #900035 #EE3C7E #EE6B9C;
 }
+
+footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00733E;
+    text-align: center;
+    position: static;
+}
