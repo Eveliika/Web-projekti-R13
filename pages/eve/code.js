@@ -110,7 +110,7 @@ function getFeedBack(answer, rightAnswer) {
 -lukitse kentät
 -vastatut/kysymysten määrä
 -tulokset
--funktioiden oikea paikka?
+-funktioiden kommentit ja paikka
 -muuttujat alkuun
 -virheviesti, jos vastaus muu ku numeroita?
 -tiedostojen nimet
