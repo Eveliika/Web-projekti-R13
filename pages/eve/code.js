@@ -5,6 +5,8 @@ function getRndInteger(min, max) {
   }
 
 let feedback = document.getElementById("feedback");
+let answered = 0;
+let points = 0;
 
 //1. laskun arvojen määritteleminen
 document.getElementById("euros").innerHTML = getRndInteger(5, 15);
@@ -31,51 +33,8 @@ document.getElementById("next1").disabled = true;
 document.getElementById("next2").disabled = true;
 document.getElementById("next3").disabled = true;
 document.getElementById("next4").disabled = true;
-document.getElementById("results").disabled = true;
+document.getElementById("showResults").disabled = true;
 
-//NÄILLE FUNKTIO??
-//Piilotetaan edellinen kysymys ja näytetään seuraava kysymys
-document.getElementById("next1").onclick = function showQuestion2() {
-  document.getElementById("Q1").style = "display: none";
-  document.getElementById("Q2").style = "display: inline";
-  feedback.innerHTML = "";
-}
-
-document.getElementById("next2").onclick = function showQuestion3() {
-  document.getElementById("Q2").style = "display: none";
-  document.getElementById("Q3").style = "display: inline";
-  feedback.innerHTML = "";
-}
-
-document.getElementById("next3").onclick = function showQuestion4() {
-  document.getElementById("Q3").style = "display: none";
-  document.getElementById("Q4").style = "display: inline";
-  feedback.innerHTML = "";
-}
-
-document.getElementById("next4").onclick = function showQuestion5() {
-  document.getElementById("Q4").style = "display: none";
-  document.getElementById("Q5").style = "display: inline";
-  feedback.innerHTML = "";
-}
-
-document.getElementById("results").onclick = function showResults() {
-  document.getElementById("Q5").style = "display: none";
-  feedback.innerHTML = "";
-  //Näytetään yhteenveto tehtävistä
-
-}
-
-/**
- * EI TOIMI OIKEIN KUTSUTTAESSA??
- * @param {*} previousQuestion 
- * @param {*} nextQuestion 
- */
-/*function showNextQuestion(previousQuestion, nextQuestion) {
-  document.getElementById(previousQuestion).style = "display: none";
-  document.getElementById(nextQuestion).style = "display: inline";
-  feedback.innerHTML = "";
-}*/
 
 //Tarkistetaan vastaus
 //Lasku 1
@@ -115,7 +74,7 @@ document.getElementById("check5").onclick = function checkAnswer5() {
   let rightAnswer5 = Number(document.getElementById("students1").innerHTML) + Number(document.getElementById("students2").innerHTML) + Number(document.getElementById("students3").innerHTML);
   //Lukitaan input-kenttä
   document.getElementById("answer5").disabled = true;
-  getFeedBack("answer5", "results", rightAnswer5);
+  getFeedBack("answer5", "showResults", rightAnswer5);
 }
 
 /**
@@ -130,6 +89,8 @@ function getFeedBack(answer, next, rightAnswer) {
     feedback.innerHTML = "Oikein!";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
+    answered += 1;
+    points += 1;
   } else if (document.getElementById(answer).value == "") {
     feedback.innerHTML = "Et antanut vastausta, yritä uudelleen!";
     //Avataan vastauskentän lukitus
@@ -142,15 +103,78 @@ function getFeedBack(answer, next, rightAnswer) {
     feedback.innerHTML = "Väärin! Oikea vastaus on " + rightAnswer + ".";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
+    answered += 1;
   }
 }
 
 
+//NÄILLE FUNKTIO??
+//Piilotetaan edellinen kysymys ja näytetään seuraava kysymys
+document.getElementById("next1").onclick = function showQuestion2() {
+  document.getElementById("Q1").style = "display: none";
+  document.getElementById("Q2").style = "display: inline";
+  feedback.innerHTML = "";
+  document.getElementById("answer2").focus();
+}
+
+document.getElementById("next2").onclick = function showQuestion3() {
+  document.getElementById("Q2").style = "display: none";
+  document.getElementById("Q3").style = "display: inline";
+  feedback.innerHTML = "";
+  document.getElementById("answer3").focus();
+}
+
+document.getElementById("next3").onclick = function showQuestion4() {
+  document.getElementById("Q3").style = "display: none";
+  document.getElementById("Q4").style = "display: inline";
+  feedback.innerHTML = "";
+  document.getElementById("answer4").focus();
+}
+
+document.getElementById("next4").onclick = function showQuestion5() {
+  document.getElementById("Q4").style = "display: none";
+  document.getElementById("Q5").style = "display: inline";
+  feedback.innerHTML = "";
+  document.getElementById("answer5").focus();
+}
+
+document.getElementById("showResults").onclick = function showResults() {
+  document.getElementById("Q5").style = "display: none";
+  document.getElementById("results").style = "display: inline";
+  feedback.innerHTML = "";
+}
+
+/**
+ * EI TOIMI OIKEIN KUTSUTTAESSA??
+ * @param {*} previousQuestion 
+ * @param {*} nextQuestion 
+ */
+/*function showNextQuestion(previousQuestion, nextQuestion) {
+  document.getElementById(previousQuestion).style = "display: none";
+  document.getElementById(nextQuestion).style = "display: inline";
+  feedback.innerHTML = "";
+  
+}*/
+
+//Tulostetaan tulokset
+if (points == 5) {
+  document.getElementById("points").innerHTML = "5/5";
+} else if (points == 4) {
+  document.getElementById("points").innerHTML = "4/5";
+} else if (points == 3) {
+  document.getElementById("points").innerHTML = "3/5";
+} else if (points == 2) {
+  document.getElementById("points").innerHTML = "2/5";
+} else if (points == 1) {
+  document.getElementById("points").innerHTML = "1/5";
+} else if (points == 0) {
+  document.getElementById("points").innerHTML = "0/5";
+}
 
 /*MUISTA!
 -tarkista kommentit
 -vastatut/kysymysten määrä
--tulokset
+-tulokset (Ei toimi!)
 -funktioiden kommentit ja paikka
 -muuttujat alkuun
 -virheviesti, jos vastaus muu ku numeroita?
