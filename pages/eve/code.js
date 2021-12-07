@@ -92,13 +92,20 @@ function getFeedBack(answer, next, rightAnswer) {
     answered += 1;
     points += 1;
   } else if (document.getElementById(answer).value == "") {
-    feedback.innerHTML = "Et antanut vastausta, yritä uudelleen!";
+    feedback.innerHTML = "Vastaus puuttuu, yritä uudelleen!";
     //Avataan vastauskentän lukitus
     document.getElementById(answer).disabled = false;
     //Lukitaan "Seuraava kysymys"-painike
     document.getElementById(next).disabled = true;
     //Viedään kursori takaisin vastauskenttään
     document.getElementById(answer).focus();
+  } else if (isNaN(document.getElementById(answer).value)) {
+    feedback.innerHTML = "Vastaus täytyy antaa numerona, yritä uudelleen!";
+    document.getElementById(answer).disabled = false;
+    document.getElementById(next).disabled = true;
+    document.getElementById(answer).focus();
+    //Tyhjennetään vastauskenttä
+    document.getElementById(answer).value = "";
   } else {
     feedback.innerHTML = "Väärin! Oikea vastaus on " + rightAnswer + ".";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
@@ -173,7 +180,6 @@ if (points == 5) {
 
 /*MUISTA!
 -tarkista kommentit
--vastatut/kysymysten määrä
 -tulokset (Ei toimi!)
 -funktioiden kommentit ja paikka
 -muuttujat alkuun
