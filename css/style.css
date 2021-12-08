@@ -1,4 +1,10 @@
-
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
 
 /* Tallennan tähän sivustolla käytettävät värit*/
 .class {
@@ -9,17 +15,24 @@
 }
 
 .container {
-    background-color: #61D8A2;
+    background-color: #b5ffe0;
+    height: auto;
     display: flex;
     flex-direction: column;
-    height: auto;
     text-align: center;
+    flex-grow: 1;
+
 }
 
 footer {
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #00733E;
+    background-color: #c6ffe2;
     text-align: center;
+    position: absolute;
+    bottom: 0px;
 }
+
+
