@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    background-color: #b5ffe0;
+    background-color: #cef5e5;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -39,7 +39,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #c6ffe2;
+    background-color: #ace0c4;
     text-align: center;
     padding: 10px;
 }
