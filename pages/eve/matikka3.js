@@ -5,7 +5,6 @@ function getRndInteger(min, max) {
   }
 
 let feedback = document.getElementById("feedback");
-let answered = 0;
 let points = 0;
 
 //1. laskun arvojen määritteleminen
@@ -89,7 +88,6 @@ function getFeedBack(answer, next, rightAnswer) {
     feedback.innerHTML = "Oikein!";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
-    answered += 1;
     points += 1;
   } else if (document.getElementById(answer).value == "") {
     feedback.innerHTML = "Vastaus puuttuu, yritä uudelleen!";
@@ -110,7 +108,6 @@ function getFeedBack(answer, next, rightAnswer) {
     feedback.innerHTML = "Väärin! Oikea vastaus on " + rightAnswer + ".";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
-    answered += 1;
   }
 }
 
@@ -149,6 +146,21 @@ document.getElementById("showResults").onclick = function showResults() {
   document.getElementById("Q5").style = "display: none";
   document.getElementById("results").style = "display: inline";
   feedback.innerHTML = "";
+
+  //Tulostetaan tulokset
+  if (points == 5) {
+    document.getElementById("points").innerHTML = "5/5";
+  } else if (points == 4) {
+    document.getElementById("points").innerHTML = "4/5";
+  } else if (points == 3) {
+    document.getElementById("points").innerHTML = "3/5";
+  } else if (points == 2) {
+    document.getElementById("points").innerHTML = "2/5";
+  } else if (points == 1) {
+    document.getElementById("points").innerHTML = "1/5";
+  } else if (points == 0) {
+    document.getElementById("points").innerHTML = "0/5";
+  }
 }
 
 /**
@@ -163,20 +175,7 @@ document.getElementById("showResults").onclick = function showResults() {
   
 }*/
 
-//Tulostetaan tulokset
-if (points == 5) {
-  document.getElementById("points").innerHTML = "5/5";
-} else if (points == 4) {
-  document.getElementById("points").innerHTML = "4/5";
-} else if (points == 3) {
-  document.getElementById("points").innerHTML = "3/5";
-} else if (points == 2) {
-  document.getElementById("points").innerHTML = "2/5";
-} else if (points == 1) {
-  document.getElementById("points").innerHTML = "1/5";
-} else if (points == 0) {
-  document.getElementById("points").innerHTML = "0/5";
-}
+
 
 /*MUISTA!
 -tarkista kommentit
