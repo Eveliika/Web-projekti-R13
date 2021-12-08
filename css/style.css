@@ -23,6 +23,7 @@ body {
     flex-grow: 1;
     margin-bottom: 10px;
     margin-top: 10px;
+    padding-bottom: 45px;
 }
 
 h3 {
@@ -40,6 +41,7 @@ footer {
     flex-direction: column;
     background-color: #c6ffe2;
     text-align: center;
+    padding: 10px;
 }
 
 .fa-carrot {
@@ -53,3 +55,4 @@ footer {
     padding-bottom: 20px;
     padding-left: 10px;
 }
+
