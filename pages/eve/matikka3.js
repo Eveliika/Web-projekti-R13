@@ -179,11 +179,7 @@ document.getElementById("showResults").onclick = function showResults() {
 
 /*MUISTA!
 -tarkista kommentit
--tulokset (Ei toimi!)
+-tulokset visualisointi
 -funktioiden kommentit ja paikka
--muuttujat alkuun
--virheviesti, jos vastaus muu ku numeroita?
--tiedostojen nimet
--seuraava kysymys lukitus vai pois näkyvistä?
 -muotoile palauteviestit
 */
