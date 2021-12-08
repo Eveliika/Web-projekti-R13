@@ -25,6 +25,10 @@ body {
     margin-top: 10px;
 }
 
+h3 {
+    padding-top: 45px;
+}
+
 p {
     padding: 30px 100px 0px 100px;
 }
