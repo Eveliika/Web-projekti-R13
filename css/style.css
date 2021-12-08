@@ -43,5 +43,10 @@ footer {
 }
 
 .fa-carrot {
+    color: orange; 
+}
+
+.navbar-brand {
+    font-family: 'Neucha', cursive;
     color: orange;
 }
