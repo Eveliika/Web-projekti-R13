@@ -1,0 +1,57 @@
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Tallennan tähän sivustolla käytettävät värit*/
+.class {
+    background-color:
+     #00B060 #218457 #00733E #36D88E  #61D8A2
+     #FF9500	#BF8430 #A66100, #FFB040 #FFC573
+     #DE0052 #A62A58 #900035 #EE3C7E #EE6B9C;
+}
+
+.container {
+    background-color: #cef5e5;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 45px;
+}
+
+h3 {
+    padding-top: 45px;
+}
+
+p {
+    padding: 30px 100px 0px 100px;
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ace0c4;
+    text-align: center;
+    padding: 10px;
+}
+
+.fa-carrot {
+    color: orange; 
+}
+
+.navbar-brand {
+    font-family: 'Neucha', cursive;
+    font-size: 1.5em;
+    color: orange;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
