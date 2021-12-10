@@ -5,7 +5,7 @@ function getRndInteger(min, max) {
 let minutes = getRndInteger(1, 5);
 document.getElementById("minutes").innerHTML = minutes;
 
-let candies = document.getElementById("candyAmount").innerHTML
+
 
 
 let rightAnswerTxt = "oikea vastaus!"
@@ -14,13 +14,24 @@ let wrongAnswerTxt = "väärä vastaus!"
 
 // Ensimmäinen lasku
 function first() {
-    
     let rightAnswer = minutes * 60;
-    if (document.getElementById("answerInput1").value == rightAnswer) {
+    if (document.getElementById("minuteAnswer").value == rightAnswer) {
         document.getElementById("answer1").innerHTML = "Vastasit " + rightAnswer + ". Se on " + rightAnswerTxt; 
     return;
     } else {
-        document.getElementById("answer1").innerHTML = "Vastasit " + document.getElementById("answerInput1").value + ". Se on " + wrongAnswerTxt + " Oikea vastaus on " + rightAnswer + ".";
+        document.getElementById("answer1").innerHTML = "Vastasit " + document.getElementById("minuteAnswer").value + ". Se on " + wrongAnswerTxt + " Oikea vastaus on " + rightAnswer + ".";
+    }
+}
+
+
+let candies = getRndInteger(4, 10) * 4;
+document.getElementById("candyAmount").innerHTML = candies;
+
+function second() {
+    if (document.getElementById("candyAnswer").value == candies / 4) {
+        document.getElementById("answer2").innerHTML = "Oikein!"
+    } else {
+        document.getElementById("answer2").innerHTML = "Väärin."
     }
 }
 
