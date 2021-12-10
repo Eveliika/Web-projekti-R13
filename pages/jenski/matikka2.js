@@ -2,24 +2,25 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
-let minutes = document.getElementById("minutes").innerHTML = getRndInteger(1, 5);
+let minutes = getRndInteger(1, 5);
 document.getElementById("minutes").innerHTML = minutes;
 
+let candies = document.getElementById("candyAmount").innerHTML
 
 
-let rightAnswer = "Oikea vastaus!"
-let wrongAnswer = "Väärin meni!"
+let rightAnswerTxt = "oikea vastaus!"
+let wrongAnswerTxt = "väärä vastaus!"
 
 
 // Ensimmäinen lasku
-function f1() {
-
-    if (document.getElementById("answer").value == minutes * 60) {
-    document.getElementById("answer1").innerHTML = document.getElementById("answer").value + " " + rightAnswer; 
+function first() {
+    
+    let rightAnswer = minutes * 60;
+    if (document.getElementById("answerInput1").value == rightAnswer) {
+        document.getElementById("answer1").innerHTML = "Vastasit " + rightAnswer + ". Se on " + rightAnswerTxt; 
     return;
     } else {
-        document.getElementById("answer1").innerHTML = wrongAnswer;
-
+        document.getElementById("answer1").innerHTML = "Vastasit " + document.getElementById("answerInput1").value + ". Se on " + wrongAnswerTxt + " Oikea vastaus on " + rightAnswer + ".";
     }
 }
 
