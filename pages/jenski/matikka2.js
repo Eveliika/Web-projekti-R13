@@ -2,23 +2,36 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
-let seconds = document.getElementById("seconds").innerHTML = getRndInteger(1, 500);
-document.getElementById("seconds").innerHTML = seconds;
+let minutes = getRndInteger(1, 5);
+document.getElementById("minutes").innerHTML = minutes;
 
-function f1() {
-    document.getElementById("p").innerHTML = getRndInteger(0,10);
 
-    
-}
 
-function f2() {
 
-    if (document.getElementById("answer").value == Math.round(seconds / 60)) {
-    document.getElementById("answer1").innerHTML = document.getElementById("answer").value; 
+let rightAnswerTxt = "oikea vastaus!"
+let wrongAnswerTxt = "väärä vastaus!"
+
+
+// Ensimmäinen lasku
+function first() {
+    let rightAnswer = minutes * 60;
+    if (document.getElementById("minuteAnswer").value == rightAnswer) {
+        document.getElementById("answer1").innerHTML = "Vastasit " + rightAnswer + ". Se on " + rightAnswerTxt; 
     return;
     } else {
-        document.getElementById("answer1").innerHTML = "Wrong answer";
+        document.getElementById("answer1").innerHTML = "Vastasit " + document.getElementById("minuteAnswer").value + ". Se on " + wrongAnswerTxt + " Oikea vastaus on " + rightAnswer + ".";
+    }
+}
 
+
+let candies = getRndInteger(4, 10) * 4;
+document.getElementById("candyAmount").innerHTML = candies;
+
+function second() {
+    if (document.getElementById("candyAnswer").value == candies / 4) {
+        document.getElementById("answer2").innerHTML = "Oikein!"
+    } else {
+        document.getElementById("answer2").innerHTML = "Väärin."
     }
 }
 
