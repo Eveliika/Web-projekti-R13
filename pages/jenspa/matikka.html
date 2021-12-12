@@ -20,7 +20,7 @@
 
     <title>Matikkaporkkana</title>
   </head>
-  <body>
+  <body onload="startData()">
     <!-- Kuvakaruselli -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -73,21 +73,22 @@
 
       <!--Matikkasivun sisältö-->
       <div class="container">
-        <section>
+        <section id="startTest">
             <h2>Testaa laskutaitosi</h2>
             <p>Tähän tulee ohjeet tehtäviä varten...</p>
+            <div>
+              <button onclick="startTest()">Aloita testi</button>
+            </div>
         </section>
-        <section>
-            <!--Alert-->
-            <h4>Tehtävä 1</h4>
-            <div id="liveAlertPlaceholder"></div>
-            <form action="">
-                <label id="number1a"></label> + <label id="number1b"></label> = 
-                <input type="number" name="answer1" id="answer1">
-                <input type="button" id="liveAlertBtn" value="Tarkista">
-            </form>
-        </section>
-        <!-- <section>
+        <section id="q1">
+          <h4>Tehtävä 1</h4>
+          <div>
+              <label id="number1a"></label> + <label id="number1b"></label> = 
+              <input id="answer1">
+              <button onclick="checkAnswerOne()">Lukitse vastaus</button>
+          </div>
+      </section>
+      <section id="q2">
             <h4>Tehtävä 2</h4>
             <div>
                 <label id="number2a"></label> * <label id="number2b"></label> = 
@@ -95,7 +96,7 @@
                 <button onclick="checkAnswerTwo()">Lukitse vastaus</button>
             </div>
         </section>
-        <section>
+        <section id="q3">
             <h4>Tehtävä 3</h4>
             <div>
                 <label id="number3a"></label> + <label id="number3b"></label> - <label id="number3c"></label> = 
@@ -103,7 +104,7 @@
                 <button onclick="checkAnswerThree()">Lukitse vastaus</button>
             </div>
         </section>
-        <section>
+        <section id="q4">
             <h4>Tehtävä 4</h4>
             <div>
                 <label id="number4a"></label> : <label id="number4b"></label> = 
@@ -111,7 +112,7 @@
                 <button onclick="checkAnswerFour()">Lukitse vastaus</button>
             </div>
         </section>
-        <section>
+        <section id="q5">
             <h4>Tehtävä 5</h4>
             <div>
                 <label id="number5a"></label> * <label id="number5b"></label> - <label id="number5c"></label> = 
@@ -119,14 +120,14 @@
                 <button onclick="checkAnswerFive()">Lukitse vastaus</button><br><br>
             </div>
         </section>
-        <section>
+        <section id="finishTest">
             <div>
                 <button onclick="finishTest()">Lopeta testi</button>
             </div>
             <div>
                 <label id="classification"></label>
             </div>
-        </section> -->
+        </section>
     </div>
 
     <!--Alatunniste-->
