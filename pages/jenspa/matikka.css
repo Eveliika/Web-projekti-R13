@@ -54,6 +54,14 @@ h2 {
     border: 3px solid #F2B752;
 }
 
+.btnTryAgain {
+    background-color: #F7C56C;
+    border-radius: 8px;
+    border: 3px solid #F2B752;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 .progress {
     margin: auto;
     width: 700px;

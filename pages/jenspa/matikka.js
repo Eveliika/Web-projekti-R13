@@ -35,6 +35,7 @@ function startData() {
     document.getElementById("q5").style.display = "none";
     document.getElementById("results").innerHTML = "";
     document.getElementById("finishTest").style.display = "none";
+    document.getElementById("tryAgain").style.display = "none";
     document.getElementById("next").style.display = "none";
     document.getElementById("next2").style.display = "none";
     document.getElementById("next3").style.display = "none";
@@ -276,21 +277,27 @@ function finishTest() {
     document.getElementById("q5").style.display = "none";
 
     classification();
+}
 
-    function classification() {
+function classification() {
 
-        if (counter == 5) {
-            document.getElementById("classification").innerHTML = fiveRight
-        } else if (counter == 4) {
-            document.getElementById("classification").innerHTML = fourRight
-        } else if (counter == 3) {
-            document.getElementById("classification").innerHTML = threeRight
-        } else if (counter == 2) {
-            document.getElementById("classification").innerHTML = twoRight
-        } else if (counter == 1) {
-            document.getElementById("classification").innerHTML = oneRight
-        } else {
-            document.getElementById("classification").innerHTML = zeroRight
-        }
+    document.getElementById("tryAgain").style.display = "block";
+
+    if (counter == 5) {
+        document.getElementById("classification").innerHTML = fiveRight
+    } else if (counter == 4) {
+        document.getElementById("classification").innerHTML = fourRight
+    } else if (counter == 3) {
+        document.getElementById("classification").innerHTML = threeRight
+    } else if (counter == 2) {
+        document.getElementById("classification").innerHTML = twoRight
+    } else if (counter == 1) {
+        document.getElementById("classification").innerHTML = oneRight
+    } else {
+        document.getElementById("classification").innerHTML = zeroRight
     }
+}
+
+function tryAgain() {
+    // TEE VIELÄ NIIN ETTÄ TEHTÄVÄT ALKAA ALUSTA!!
 }
