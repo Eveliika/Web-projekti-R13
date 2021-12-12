@@ -225,7 +225,7 @@ function checkAnswerFive() {
 
     //Luodaan muuttuja oikeaa vastausta varten
     let result5 = 0
-    result5 = Number(document.getElementById("number5a").innerHTML) * Number(document.getElementById("number5b").innerHTML) - Number(document.getElementById("number5b").innerHTML);
+    result5 = Number(document.getElementById("number5a").innerHTML) * Number(document.getElementById("number5b").innerHTML) - Number(document.getElementById("number5c").innerHTML);
     let answer5 = document.getElementById("answer5").value;
 
     // Tarkistetaan, onko vastaus syötetty
