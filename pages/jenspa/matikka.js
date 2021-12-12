@@ -10,9 +10,11 @@ let counter2 = 0
 // Muuttuja kysymysten määrälle
 let taskAmount = 5
 
-// Muuttujat alert-ilmoitukselle
-let alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-let alertTrigger = document.getElementById('liveAlertBtn')
+
+// Luodaan muuttujat tyhjälle, oikealle ja väärälle vastaukselle
+let right = "Vastauksesi on oikein!";
+let wrong = "Vastaus on väärin. Oikea vastaus on "
+let empty = "Syötä vastaus."
 
 // Luodaan muuttujat luokittelua varten
 let fiveRight = "5/5 Sait kaikki oikein, olet nero!"
@@ -31,7 +33,12 @@ function startData() {
     document.getElementById("q3").style.display = "none";
     document.getElementById("q4").style.display = "none";
     document.getElementById("q5").style.display = "none";
+    document.getElementById("results").innerHTML = "";
     document.getElementById("finishTest").style.display = "none";
+    document.getElementById("next").style.display = "none";
+    document.getElementById("next2").style.display = "none";
+    document.getElementById("next3").style.display = "none";
+    document.getElementById("next4").style.display = "none";
 }
 function startTest() {
     document.getElementById("startTest").style.display = "none";
@@ -55,89 +62,202 @@ function startTest() {
     // Arvotaan tehtäviin uudet numerot
     document.getElementById("number1a").innerHTML = getRndInteger(1, 20);
     document.getElementById("number1b").innerHTML = getRndInteger(1, 20);
-    // document.getElementById("number2a").innerHTML = getRndInteger(1, 10);
-    // document.getElementById("number2b").innerHTML = getRndInteger(1, 10);
-    // document.getElementById("number3a").innerHTML = getRndInteger(5, 20);
-    // document.getElementById("number3b").innerHTML = getRndInteger(5, 20);
-    // document.getElementById("number3c").innerHTML = getRndInteger(1, 10);
-    // document.getElementById("number4a").innerHTML = numbers1[getRndInteger(0, numbers1.length)];
-    // document.getElementById("number4b").innerHTML = numbers2[getRndInteger(0, 2)];
-    // document.getElementById("number5a").innerHTML = getRndInteger(3, 10);
-    // document.getElementById("number5b").innerHTML = getRndInteger(3, 10);
-    // document.getElementById("number5c").innerHTML = getRndInteger(1, 9);
+    document.getElementById("number2a").innerHTML = getRndInteger(1, 10);
+    document.getElementById("number2b").innerHTML = getRndInteger(1, 10);
+    document.getElementById("number3a").innerHTML = getRndInteger(5, 20);
+    document.getElementById("number3b").innerHTML = getRndInteger(5, 20);
+    document.getElementById("number3c").innerHTML = getRndInteger(1, 10);
+    document.getElementById("number4a").innerHTML = numbers1[getRndInteger(0, numbers1.length)];
+    document.getElementById("number4b").innerHTML = numbers2[getRndInteger(0, 2)];
+    document.getElementById("number5a").innerHTML = getRndInteger(3, 10);
+    document.getElementById("number5b").innerHTML = getRndInteger(3, 10);
+    document.getElementById("number5c").innerHTML = getRndInteger(1, 9);
 
-// Funktio tarkistukselle ja alert-ilmoitukselle
-function alert(message, type) {
-    document.getElementById("answer1").disabled = true;
-
-    let wrapper = document.createElement('div')
-    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-  
-    alertPlaceholder.append(wrapper)
-
-}
-  // Tarkista, onko alertTrigger olemassa
-  if (alertTrigger) {
-      // Luo tapahtumankäsittelijä alertTriggerin click-eventille
-    alertTrigger.addEventListener('click', function () {
-    // Luodaan muuttuja oikeaa vastausta varten
-    let result1 = 0
-    result1 = Number(document.getElementById("number1a").innerHTML) + Number(document.getElementById("number1b").innerHTML);
-    
-    let answer1 = document.getElementById("answer1").value;
-
-      // Tarkistetaan, onko vastaus syötetty
-      if (answer1 == "") {
-        alert("Syötä vastaus", 'warning')
-        document.getElementById("answer1").disabled = false;
-        return
-      }
-      
-    if (answer1 == result1) {
-        counter++;
-        counter2++;
-        // Kutsutaan funktiota alert 
-        alert("Vastaus on oikein!", 'success')
-      } else {
-        // Kutsutaan funktiota alert 
-        alert("Vastaus on väärin. Oikea vastaus on " + result1, 'danger')
-          
-      }
-    })
-}
   
 
-// function checkAnswerOne() {
-//     document.getElementById("answer1").disabled = true;
+function checkAnswerOne() {
+         document.getElementById("answer1").disabled = true;
 
-//     // Luodaan muuttuja oikeaa vastausta varten
-//     let result1 = document.getElementById("number1a") && document.getElementById("number1b")
+        //Luodaan muuttuja oikeaa vastausta varten
+        let result1 = 0
+        result1 = Number(document.getElementById("number1a").innerHTML) + Number(document.getElementById("number1b").innerHTML);
+        let answer1 = document.getElementById("answer1").value;
 
-//     if(answer1 = result1) {
-//         counter++;
-//         counter2++;
-//     } else {
+        // Tarkistetaan, onko vastaus syötetty
+        if (answer1 == "") {
+            document.getElementById("results").innerHTML = empty;
+            document.getElementById("answer1").disabled = false;
+            return
+        }
         
-//     }
-// }
+        if(answer1 == result1) {
+            counter++;
+            counter2++;
+            document.getElementById("results").innerHTML = right;
+            document.getElementById("next").style.display = "block";
+            document.getElementById("checkOne").disabled = true;
+
+            } else {
+            document.getElementById("results").innerHTML = wrong + result1 + ".";
+            document.getElementById("next").style.display = "block";
+            document.getElementById("checkOne").disabled = true;
+            }
+        
+}
+
+function nextQuestion1() {
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("next").style.display = "none";
+    document.getElementById("q1").style.display = "none";
+    document.getElementById("q2").style.display = "block";
+}
 
 function checkAnswerTwo() {
     document.getElementById("answer2").disabled = true;
+
+        //Luodaan muuttuja oikeaa vastausta varten
+        let result2 = 0
+        result2 = Number(document.getElementById("number2a").innerHTML) * Number(document.getElementById("number2b").innerHTML);
+        let answer2 = document.getElementById("answer2").value;
+
+        // Tarkistetaan, onko vastaus syötetty
+        if (answer2 == "") {
+            document.getElementById("results").innerHTML = empty;
+            document.getElementById("answer2").disabled = false;
+            return
+        }
+        
+        if(answer2 == result2) {
+            counter++;
+            counter2++;
+            document.getElementById("results").innerHTML = right;
+            document.getElementById("next2").style.display = "block";
+            document.getElementById("checkTwo").disabled = true;
+
+            } else {
+            document.getElementById("results").innerHTML = wrong + result2 + ".";
+            document.getElementById("next2").style.display = "block";
+            document.getElementById("checkTwo").disabled = true;
+            }
+}
+
+function nextQuestion2() {
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("next2").style.display = "none";
+    document.getElementById("q2").style.display = "none";
+    document.getElementById("q3").style.display = "block";
 }
 
 function checkAnswerThree() {
     document.getElementById("answer3").disabled = true;
+
+    //Luodaan muuttuja oikeaa vastausta varten
+    let result3 = 0
+    result3 = Number(document.getElementById("number3a").innerHTML) + Number(document.getElementById("number3b").innerHTML) - Number(document.getElementById("number3c").innerHTML);
+    let answer3 = document.getElementById("answer3").value;
+
+    // Tarkistetaan, onko vastaus syötetty
+    if (answer3 == "") {
+        document.getElementById("results").innerHTML = empty;
+        document.getElementById("answer3").disabled = false;
+        return
+    }
+    
+    if(answer3 == result3) {
+        counter++;
+        counter2++;
+        document.getElementById("results").innerHTML = right;
+        document.getElementById("next3").style.display = "block";
+        document.getElementById("checkThree").disabled = true;
+
+        } else {
+        document.getElementById("results").innerHTML = wrong + result3 + ".";
+        document.getElementById("next3").style.display = "block";
+        document.getElementById("checkThree").disabled = true;
+        }
+}
+
+function nextQuestion3() {
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("next3").style.display = "none";
+    document.getElementById("q3").style.display = "none";
+    document.getElementById("q4").style.display = "block";
 }
 
 function checkAnswerFour() {
     document.getElementById("answer4").disabled = true;
+
+    //Luodaan muuttuja oikeaa vastausta varten
+    let result4 = 0
+    result4 = Number(document.getElementById("number4a").innerHTML) / Number(document.getElementById("number4b").innerHTML);
+    let answer4 = document.getElementById("answer4").value;
+
+    // Tarkistetaan, onko vastaus syötetty
+    if (answer4 == "") {
+        document.getElementById("results").innerHTML = empty;
+        document.getElementById("answer4").disabled = false;
+        return
+    }
+    
+    if(answer4 == result4) {
+        counter++;
+        counter2++;
+        document.getElementById("results").innerHTML = right;
+        document.getElementById("next4").style.display = "block";
+        document.getElementById("checkFour").disabled = true;
+
+        } else {
+        document.getElementById("results").innerHTML = wrong + result4 + ".";
+        document.getElementById("next4").style.display = "block";
+        document.getElementById("checkFour").disabled = true;
+        }
+}
+
+function nextQuestion4() {
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("next4").style.display = "none";
+    document.getElementById("q4").style.display = "none";
+    document.getElementById("q5").style.display = "block";
 }
 
 function checkAnswerFive() {
     document.getElementById("answer5").disabled = true;
+
+    //Luodaan muuttuja oikeaa vastausta varten
+    let result5 = 0
+    result5 = Number(document.getElementById("number5a").innerHTML) * Number(document.getElementById("number5b").innerHTML) - Number(document.getElementById("number5b").innerHTML);
+    let answer5 = document.getElementById("answer5").value;
+
+    // Tarkistetaan, onko vastaus syötetty
+    if (answer5 == "") {
+        document.getElementById("results").innerHTML = empty;
+        document.getElementById("answer5").disabled = false;
+        return
+    }
+    
+    if(answer5 == result5) {
+        counter++;
+        counter2++;
+        document.getElementById("results").innerHTML = right;
+        document.getElementById("finishTest").style.display = "block";
+        document.getElementById("checkFive").disabled = true;
+
+        } else {
+        document.getElementById("results").innerHTML = wrong + result5 + ".";
+        document.getElementById("finishTest").style.display = "block";
+        document.getElementById("checkFive").disabled = true;
+        }
 }
 
 function finishTest() {
+
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("finishTest").style.display = "none";
+    document.getElementById("q5").style.display = "none";
+
+    classification();
+
+function classification() {
 
     if(counter == 5) {
         document.getElementById("classification").innerHTML = fiveRight
@@ -152,4 +272,5 @@ function finishTest() {
     } else {
         document.getElementById("classification").innerHTML = zeroRight
     }
+}  
 }
