@@ -107,8 +107,9 @@ function checkAnswerOne() {
     }
 
 }
-// SELVITÄ MILLÄ SAA RESULTISTA BACKGROUND-COLORIN POIS SEURAAVAAN TEHTÄVÄÄN!!!
+
 function nextQuestion1() {
+    document.getElementById("results").style.background = "transparent";
     document.getElementById("results").innerHTML = "";
     document.getElementById("next").style.display = "none";
     document.getElementById("q1").style.display = "none";
@@ -148,6 +149,7 @@ function checkAnswerTwo() {
 }
 
 function nextQuestion2() {
+    document.getElementById("results").style.background = "transparent";
     document.getElementById("results").innerHTML = "";
     document.getElementById("next2").style.display = "none";
     document.getElementById("q2").style.display = "none";
@@ -187,6 +189,7 @@ function checkAnswerThree() {
 }
 
 function nextQuestion3() {
+    document.getElementById("results").style.background = "transparent";
     document.getElementById("results").innerHTML = "";
     document.getElementById("next3").style.display = "none";
     document.getElementById("q3").style.display = "none";
@@ -226,6 +229,7 @@ function checkAnswerFour() {
 }
 
 function nextQuestion4() {
+    document.getElementById("results").style.background = "transparent";
     document.getElementById("results").innerHTML = "";
     document.getElementById("next4").style.display = "none";
     document.getElementById("q4").style.display = "none";
@@ -266,6 +270,7 @@ function checkAnswerFive() {
 
 function finishTest() {
 
+    document.getElementById("results").style.background = "transparent";
     document.getElementById("results").innerHTML = "";
     document.getElementById("finishTest").style.display = "none";
     document.getElementById("q5").style.display = "none";
