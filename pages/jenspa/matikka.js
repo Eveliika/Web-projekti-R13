@@ -44,67 +44,70 @@ function startTest() {
     document.getElementById("startTest").style.display = "none";
     document.getElementById("q1").style.display = "block";
 }
-    // Poistetaan vastauskentistä lukitus
-    document.getElementById("answer1").disabled = false;
-    // document.getElementById("answer2").disabled = false;
-    // document.getElementById("answer3").disabled = false;
-    // document.getElementById("answer4").disabled = false;
-    // document.getElementById("answer5").disabled = false;
+// Poistetaan vastauskentistä lukitus
+document.getElementById("answer1").disabled = false;
+// document.getElementById("answer2").disabled = false;
+// document.getElementById("answer3").disabled = false;
+// document.getElementById("answer4").disabled = false;
+// document.getElementById("answer5").disabled = false;
 
-    // Tyhjennetään kentät
-    document.getElementById("answer1").innerHTML = "";
-    // document.getElementById("answer2").innerHTML = "";
-    // document.getElementById("answer3").innerHTML = "";
-    // document.getElementById("answer4").innerHTML = "";
-    // document.getElementById("answer5").innerHTML = "";
-    // document.getElementById("classification").innerHTML = "";
+// Tyhjennetään kentät
+document.getElementById("answer1").innerHTML = "";
+// document.getElementById("answer2").innerHTML = "";
+// document.getElementById("answer3").innerHTML = "";
+// document.getElementById("answer4").innerHTML = "";
+// document.getElementById("answer5").innerHTML = "";
+// document.getElementById("classification").innerHTML = "";
 
-    // Arvotaan tehtäviin uudet numerot
-    document.getElementById("number1a").innerHTML = getRndInteger(1, 20);
-    document.getElementById("number1b").innerHTML = getRndInteger(1, 20);
-    document.getElementById("number2a").innerHTML = getRndInteger(1, 10);
-    document.getElementById("number2b").innerHTML = getRndInteger(1, 10);
-    document.getElementById("number3a").innerHTML = getRndInteger(5, 20);
-    document.getElementById("number3b").innerHTML = getRndInteger(5, 20);
-    document.getElementById("number3c").innerHTML = getRndInteger(1, 10);
-    document.getElementById("number4a").innerHTML = numbers1[getRndInteger(0, numbers1.length)];
-    document.getElementById("number4b").innerHTML = numbers2[getRndInteger(0, 2)];
-    document.getElementById("number5a").innerHTML = getRndInteger(3, 10);
-    document.getElementById("number5b").innerHTML = getRndInteger(3, 10);
-    document.getElementById("number5c").innerHTML = getRndInteger(1, 9);
+// Arvotaan tehtäviin uudet numerot
+document.getElementById("number1a").innerHTML = getRndInteger(1, 20);
+document.getElementById("number1b").innerHTML = getRndInteger(1, 20);
+document.getElementById("number2a").innerHTML = getRndInteger(1, 10);
+document.getElementById("number2b").innerHTML = getRndInteger(1, 10);
+document.getElementById("number3a").innerHTML = getRndInteger(5, 20);
+document.getElementById("number3b").innerHTML = getRndInteger(5, 20);
+document.getElementById("number3c").innerHTML = getRndInteger(1, 10);
+document.getElementById("number4a").innerHTML = numbers1[getRndInteger(0, numbers1.length)];
+document.getElementById("number4b").innerHTML = numbers2[getRndInteger(0, 2)];
+document.getElementById("number5a").innerHTML = getRndInteger(3, 10);
+document.getElementById("number5b").innerHTML = getRndInteger(3, 10);
+document.getElementById("number5c").innerHTML = getRndInteger(1, 9);
 
-  
+
 
 function checkAnswerOne() {
-         document.getElementById("answer1").disabled = true;
+    document.getElementById("answer1").disabled = true;
 
-        //Luodaan muuttuja oikeaa vastausta varten
-        let result1 = 0
-        result1 = Number(document.getElementById("number1a").innerHTML) + Number(document.getElementById("number1b").innerHTML);
-        let answer1 = document.getElementById("answer1").value;
+    //Luodaan muuttuja oikeaa vastausta varten
+    let result1 = 0
+    result1 = Number(document.getElementById("number1a").innerHTML) + Number(document.getElementById("number1b").innerHTML);
+    let answer1 = document.getElementById("answer1").value;
 
-        // Tarkistetaan, onko vastaus syötetty
-        if (answer1 == "") {
-            document.getElementById("results").innerHTML = empty;
-            document.getElementById("answer1").disabled = false;
-            return
-        }
-        
-        if(answer1 == result1) {
-            counter++;
-            counter2++;
-            document.getElementById("results").innerHTML = right;
-            document.getElementById("next").style.display = "block";
-            document.getElementById("checkOne").disabled = true;
+    // Tarkistetaan, onko vastaus syötetty
+    if (answer1 == "") {
+        document.getElementById("results").innerHTML = empty;
+        document.getElementById("answer1").disabled = false;
+        document.getElementById("results").style.background = "#F8DBB7"
+        return
+    }
 
-            } else {
-            document.getElementById("results").innerHTML = wrong + result1 + ".";
-            document.getElementById("next").style.display = "block";
-            document.getElementById("checkOne").disabled = true;
-            }
-        
+    if (answer1 == result1) {
+        counter++;
+        counter2++;
+        document.getElementById("results").innerHTML = right;
+        document.getElementById("next").style.display = "block";
+        document.getElementById("checkOne").disabled = true;
+        document.getElementById("results").style.background = "#D5EEDA"
+
+    } else {
+        document.getElementById("results").innerHTML = wrong + result1 + ".";
+        document.getElementById("next").style.display = "block";
+        document.getElementById("checkOne").disabled = true;
+        document.getElementById("results").style.background = "#F6BBBC"
+    }
+
 }
-
+// SELVITÄ MILLÄ SAA RESULTISTA BACKGROUND-COLORIN POIS SEURAAVAAN TEHTÄVÄÄN!!!
 function nextQuestion1() {
     document.getElementById("results").innerHTML = "";
     document.getElementById("next").style.display = "none";
@@ -115,30 +118,33 @@ function nextQuestion1() {
 function checkAnswerTwo() {
     document.getElementById("answer2").disabled = true;
 
-        //Luodaan muuttuja oikeaa vastausta varten
-        let result2 = 0
-        result2 = Number(document.getElementById("number2a").innerHTML) * Number(document.getElementById("number2b").innerHTML);
-        let answer2 = document.getElementById("answer2").value;
+    //Luodaan muuttuja oikeaa vastausta varten
+    let result2 = 0
+    result2 = Number(document.getElementById("number2a").innerHTML) * Number(document.getElementById("number2b").innerHTML);
+    let answer2 = document.getElementById("answer2").value;
 
-        // Tarkistetaan, onko vastaus syötetty
-        if (answer2 == "") {
-            document.getElementById("results").innerHTML = empty;
-            document.getElementById("answer2").disabled = false;
-            return
-        }
-        
-        if(answer2 == result2) {
-            counter++;
-            counter2++;
-            document.getElementById("results").innerHTML = right;
-            document.getElementById("next2").style.display = "block";
-            document.getElementById("checkTwo").disabled = true;
+    // Tarkistetaan, onko vastaus syötetty
+    if (answer2 == "") {
+        document.getElementById("results").innerHTML = empty;
+        document.getElementById("answer2").disabled = false;
+        document.getElementById("results").style.background = "#F8DBB7"
+        return
+    }
 
-            } else {
-            document.getElementById("results").innerHTML = wrong + result2 + ".";
-            document.getElementById("next2").style.display = "block";
-            document.getElementById("checkTwo").disabled = true;
-            }
+    if (answer2 == result2) {
+        counter++;
+        counter2++;
+        document.getElementById("results").innerHTML = right;
+        document.getElementById("next2").style.display = "block";
+        document.getElementById("checkTwo").disabled = true;
+        document.getElementById("results").style.background = "#D5EEDA"
+
+    } else {
+        document.getElementById("results").innerHTML = wrong + result2 + ".";
+        document.getElementById("next2").style.display = "block";
+        document.getElementById("checkTwo").disabled = true;
+        document.getElementById("results").style.background = "#F6BBBC"
+    }
 }
 
 function nextQuestion2() {
@@ -160,21 +166,24 @@ function checkAnswerThree() {
     if (answer3 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer3").disabled = false;
+        document.getElementById("results").style.background = "#F8DBB7"
         return
     }
-    
-    if(answer3 == result3) {
+
+    if (answer3 == result3) {
         counter++;
         counter2++;
         document.getElementById("results").innerHTML = right;
         document.getElementById("next3").style.display = "block";
         document.getElementById("checkThree").disabled = true;
+        document.getElementById("results").style.background = "#D5EEDA"
 
-        } else {
+    } else {
         document.getElementById("results").innerHTML = wrong + result3 + ".";
         document.getElementById("next3").style.display = "block";
         document.getElementById("checkThree").disabled = true;
-        }
+        document.getElementById("results").style.background = "#F6BBBC"
+    }
 }
 
 function nextQuestion3() {
@@ -196,21 +205,24 @@ function checkAnswerFour() {
     if (answer4 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer4").disabled = false;
+        document.getElementById("results").style.background = "#F8DBB7"
         return
     }
-    
-    if(answer4 == result4) {
+
+    if (answer4 == result4) {
         counter++;
         counter2++;
         document.getElementById("results").innerHTML = right;
         document.getElementById("next4").style.display = "block";
         document.getElementById("checkFour").disabled = true;
+        document.getElementById("results").style.background = "#D5EEDA"
 
-        } else {
+    } else {
         document.getElementById("results").innerHTML = wrong + result4 + ".";
         document.getElementById("next4").style.display = "block";
         document.getElementById("checkFour").disabled = true;
-        }
+        document.getElementById("results").style.background = "#F6BBBC"
+    }
 }
 
 function nextQuestion4() {
@@ -232,21 +244,24 @@ function checkAnswerFive() {
     if (answer5 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer5").disabled = false;
+        document.getElementById("results").style.background = "#F8DBB7"
         return
     }
-    
-    if(answer5 == result5) {
+
+    if (answer5 == result5) {
         counter++;
         counter2++;
         document.getElementById("results").innerHTML = right;
         document.getElementById("finishTest").style.display = "block";
         document.getElementById("checkFive").disabled = true;
+        document.getElementById("results").style.background = "#D5EEDA"
 
-        } else {
+    } else {
         document.getElementById("results").innerHTML = wrong + result5 + ".";
         document.getElementById("finishTest").style.display = "block";
         document.getElementById("checkFive").disabled = true;
-        }
+        document.getElementById("results").style.background = "#F6BBBC"
+    }
 }
 
 function finishTest() {
@@ -257,20 +272,20 @@ function finishTest() {
 
     classification();
 
-function classification() {
+    function classification() {
 
-    if(counter == 5) {
-        document.getElementById("classification").innerHTML = fiveRight
-    } else if (counter == 4) {
-        document.getElementById("classification").innerHTML = fourRight
-    } else if (counter == 3) {
-        document.getElementById("classification").innerHTML = threeRight
-    } else if (counter == 2) {
-        document.getElementById("classification").innerHTML = twoRight
-    } else if (counter == 1) {
-        document.getElementById("classification").innerHTML = oneRight
-    } else {
-        document.getElementById("classification").innerHTML = zeroRight
+        if (counter == 5) {
+            document.getElementById("classification").innerHTML = fiveRight
+        } else if (counter == 4) {
+            document.getElementById("classification").innerHTML = fourRight
+        } else if (counter == 3) {
+            document.getElementById("classification").innerHTML = threeRight
+        } else if (counter == 2) {
+            document.getElementById("classification").innerHTML = twoRight
+        } else if (counter == 1) {
+            document.getElementById("classification").innerHTML = oneRight
+        } else {
+            document.getElementById("classification").innerHTML = zeroRight
+        }
     }
-}  
 }
