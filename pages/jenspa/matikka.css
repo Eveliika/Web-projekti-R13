@@ -30,6 +30,11 @@ h2 {
     background-color: #FAD7B9;
 }
 
+p {
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
 .btnStart {
     margin: 60px 0px 10px 0px;
     background-color: #FBDBC1;
@@ -137,6 +142,12 @@ footer {
     color: orange;
     padding-bottom: 20px;
     padding-left: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    guide {
+        
+    }
 }
 
 @media screen and (max-width: 768px) {
