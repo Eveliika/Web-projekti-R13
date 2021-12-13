@@ -76,23 +76,84 @@
         <h1>Matikkavisa</h1>
       </div>
 
+      <!-- Tehtävä 1 -->
       <div class="container">
-        <p id="p"></p>
-        <p>Kuinka monta sekuntia on <span id="minutes"></span> minuutissa?</p>
-        <input type="text" id="minuteAnswer">
-        <button id="submitAnswer1" onclick="first()">Vastaa</button>
-        <p id="answer1"></p>
+        <!-- Progress bar -->
+        <div class="progress" id="progress1">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+        
+        <p>Kuinka monta sekuntia on <span id="minutes"></span> minuutissa ja <span id="seconds"></span> sekunnissa?</p>
+        <input type="text" id="answer1">
+        <button id="submitAnswer1" onclick="checkFirst()">Vastaa</button>
+        <p id="result1"></p>
       </div>
 
+      <!-- Tehtävä 2 -->
       <div class="container">
-        <p id="p"></p>
+        <!-- Progress bar -->
+        <div class="progress" id="progress2">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+ 
         <p>Jos karkkeja on <span id="candyAmount"></span>, ja ne jaetaan tasan 4 lapsen kesken, kuinka monta karkkia kukin lapsi saa?</p>
-        <input type="text" id="candyAnswer">
-        <button id="submitAnswer2" onclick="second()">Vastaa</button>
-        <p id="answer2"></p>
+        <input type="text" id="answer2">
+        <button id="submitAnswer2" onclick="checkSecond()">Vastaa</button>
+        <p id="result2"></p>
       </div>
 
-    <!--Alatunniste-->
+      <!-- Tehtävä 3 -->
+      <div class="container">
+        <!-- Progress bar -->
+        <div class="progress" id="progress3">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+
+        <p id="p"></p>
+        <p>Pekalla menee <span id="walkingMinutes"></span> minuuttia kävellä kodilta bussipysäkille. Bussilla menee <span id="busMinutes"></span> minuuttia ajaa koululle. Kuinka monta minuuttia Pekalla menee yhteensä päivän aikana koulumatkoihin? Laske meno- ja paluuajat yhteen. </p>
+        <input type="text" id="answer3">
+        <button id="submitAnswer3" onclick="checkThird()">Vastaa</button>
+        <p id="result3"></p>
+      </div>
+
+      <!-- Tehtävä 4 -->
+      <div class="container">
+        <!-- Progress bar -->
+        <div class="progress" id="progress4">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+
+        <p id="p"></p>
+        <p>Montako kertaa </p>
+        <input type="text" id="answer4">
+        <button id="submitAnswer4" onclick="checkFourth()">Vastaa</button>
+        <p id="result4"></p>
+      </div>
+
+      <!-- Tehtävä 5 -->
+      <div class="container">
+        <!-- Progress bar -->
+        <div class="progress" id="progress5">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+
+        <p id="p"></p>
+        <p>Montako kertaa </p>
+        <input type="text" id="answer5">
+        <button id="submitAnswer5" onclick="checkFifth()">Vastaa</button>
+        <p id="result5"></p>
+      </div>
+
+      <div class="container">
+        <!-- Progress bar -->
+        <div class="progress" id="progressFinal">
+          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+        </div>
+
+        <p id="p">dfsdf</p>
+      </div>
+
+      <!--Alatunniste-->
       <footer>
           <table>
               <tr><th>Tekijät</th></tr>
