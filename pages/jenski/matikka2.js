@@ -17,9 +17,11 @@ function first() {
     let rightAnswer = minutes * 60;
     if (document.getElementById("minuteAnswer").value == rightAnswer) {
         document.getElementById("answer1").innerHTML = "Vastasit " + rightAnswer + ". Se on " + rightAnswerTxt; 
+        document.getElementById("minuteAnswer").disabled = true;
     return;
     } else {
         document.getElementById("answer1").innerHTML = "Vastasit " + document.getElementById("minuteAnswer").value + ". Se on " + wrongAnswerTxt + " Oikea vastaus on " + rightAnswer + ".";
+        document.getElementById("minuteAnswer").disabled = true;
     }
 }
 
@@ -35,3 +37,4 @@ function second() {
     }
 }
 
+// if candies % 4  else 
