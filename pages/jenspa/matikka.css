@@ -145,8 +145,9 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-    guide {
-        
+    .guide {
+        width: 80%;
+        text-align: center;
     }
 }
 
