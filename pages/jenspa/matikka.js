@@ -44,6 +44,7 @@ function startData() {
 function startTest() {
     document.getElementById("startTest").style.display = "none";
     document.getElementById("q1").style.display = "block";
+    document.getElementById("answer1").focus();
 }
 // Poistetaan vastauskentistä lukitus
 document.getElementById("answer1").disabled = false;
@@ -88,6 +89,7 @@ function checkAnswerOne() {
     if (answer1 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer1").disabled = false;
+        document.getElementById("answer1").focus();
         document.getElementById("results").style.background = "#F8DBB7"
         return
     }
@@ -115,6 +117,7 @@ function nextQuestion1() {
     document.getElementById("next").style.display = "none";
     document.getElementById("q1").style.display = "none";
     document.getElementById("q2").style.display = "block";
+    document.getElementById("answer2").focus();
 }
 
 function checkAnswerTwo() {
@@ -129,6 +132,7 @@ function checkAnswerTwo() {
     if (answer2 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer2").disabled = false;
+        document.getElementById("answer2").focus();
         document.getElementById("results").style.background = "#F8DBB7"
         return
     }
@@ -155,6 +159,7 @@ function nextQuestion2() {
     document.getElementById("next2").style.display = "none";
     document.getElementById("q2").style.display = "none";
     document.getElementById("q3").style.display = "block";
+    document.getElementById("answer3").focus();
 }
 
 function checkAnswerThree() {
@@ -169,6 +174,7 @@ function checkAnswerThree() {
     if (answer3 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer3").disabled = false;
+        document.getElementById("answer3").focus();
         document.getElementById("results").style.background = "#F8DBB7"
         return
     }
@@ -179,6 +185,7 @@ function checkAnswerThree() {
         document.getElementById("results").innerHTML = right;
         document.getElementById("next3").style.display = "block";
         document.getElementById("checkThree").disabled = true;
+        document.getElementById("answer1").focus();
         document.getElementById("results").style.background = "#D5EEDA"
 
     } else {
@@ -195,6 +202,7 @@ function nextQuestion3() {
     document.getElementById("next3").style.display = "none";
     document.getElementById("q3").style.display = "none";
     document.getElementById("q4").style.display = "block";
+    document.getElementById("answer4").focus();
 }
 
 function checkAnswerFour() {
@@ -209,6 +217,7 @@ function checkAnswerFour() {
     if (answer4 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer4").disabled = false;
+        document.getElementById("answer4").focus();
         document.getElementById("results").style.background = "#F8DBB7"
         return
     }
@@ -235,6 +244,7 @@ function nextQuestion4() {
     document.getElementById("next4").style.display = "none";
     document.getElementById("q4").style.display = "none";
     document.getElementById("q5").style.display = "block";
+    document.getElementById("answer5").focus();
 }
 
 function checkAnswerFive() {
@@ -249,6 +259,7 @@ function checkAnswerFive() {
     if (answer5 == "") {
         document.getElementById("results").innerHTML = empty;
         document.getElementById("answer5").disabled = false;
+        document.getElementById("answer5").focus();
         document.getElementById("results").style.background = "#F8DBB7"
         return
     }
