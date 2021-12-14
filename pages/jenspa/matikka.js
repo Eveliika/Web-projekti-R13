@@ -46,20 +46,6 @@ function startTest() {
     document.getElementById("q1").style.display = "block";
     document.getElementById("answer1").focus();
 }
-// Poistetaan vastauskentistä lukitus (MIKS NÄÄKI OLI KOMMENTEIS??)
-document.getElementById("answer1").disabled = false;
-document.getElementById("answer2").disabled = false;
-document.getElementById("answer3").disabled = false;
-document.getElementById("answer4").disabled = false;
-document.getElementById("answer5").disabled = false;
-
-// Tyhjennetään kentät (MIKS NÄÄ OLI KOMMENTEIS?)
-document.getElementById("answer1").innerHTML = "";
-document.getElementById("answer2").innerHTML = "";
-document.getElementById("answer3").innerHTML = "";
-document.getElementById("answer4").innerHTML = "";
-document.getElementById("answer5").innerHTML = "";
-document.getElementById("classification").innerHTML = "";
 
 // Arvotaan tehtäviin uudet numerot
 document.getElementById("number1a").innerHTML = getRndInteger(1, 20);
@@ -310,6 +296,5 @@ function classification() {
 }
 
 function tryAgain() {
-    // TEE VIELÄ NIIN ETTÄ TEHTÄVÄT ALKAA ALUSTA!!
-    
+    location.reload();
 }
