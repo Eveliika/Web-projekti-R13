@@ -48,12 +48,23 @@ label {
 }
 
 input {
+    width: 100px;
     margin-top: 30px;
     background-color: #FBDBC1;
     border-radius: 8px;
     border: 1px solid #F2B752;
     margin-left: 10px;
     font-size: 25px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 input:focus {
