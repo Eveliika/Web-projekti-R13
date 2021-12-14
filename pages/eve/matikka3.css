@@ -54,7 +54,16 @@ label {
     align-items: center;
 }
 
-#Q2, #Q3, #Q4, #Q5, #results {
+#info {
+    padding-top: 35px;
+}
+
+#startTest, #tryAgain {
+    background-color: #ffb649;
+    border-color: #fa9a0a;
+}
+
+#Q1, #Q2, #Q3, #Q4, #Q5, #results {
     display: none;
 }
 
@@ -85,6 +94,11 @@ input {
 a, a:hover {
     text-decoration: none;
     color: white;
+}
+
+#zeroPoints, #onePoint, #twoPoints, #threePoints, #fourPoints, #fivePoints {
+    width: 30em;
+    display: none;
 }
 
 footer {

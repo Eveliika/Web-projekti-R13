@@ -117,6 +117,12 @@ function getFeedBack(answer, next, check, rightAnswer) {
 
 
 //Piilotetaan edellinen kysymys ja näytetään seuraava kysymys
+document.getElementById("startTest").onclick = function showQuestion1() {
+  document.getElementById("info").style = "display: none";
+  document.getElementById("Q1").style = "display: inline";
+  document.getElementById("answer1").focus();
+}
+
 document.getElementById("next1").onclick = function showQuestion2() {
   document.getElementById("Q1").style = "display: none";
   document.getElementById("Q2").style = "display: inline";
@@ -152,25 +158,29 @@ document.getElementById("showResults").onclick = function showResults() {
 
   //Tulostetaan tulokset
   if (points == 5) {
-    document.getElementById("points").innerHTML = "5/5";
+    document.getElementById("points").innerHTML = "Sait täydet pisteet, loistavaa!";
+    document.getElementById("fivePoints").style = "display: block";
   } else if (points == 4) {
-    document.getElementById("points").innerHTML = "4/5";
+    document.getElementById("points").innerHTML = "Vastasit oikein neljään kysymykseen, hienoa";
+    document.getElementById("fourPoints").style = "display: block";
   } else if (points == 3) {
-    document.getElementById("points").innerHTML = "3/5";
+    document.getElementById("points").innerHTML = "Vastasit oikein kolmeen kysymykseen, hyvä!";
+    document.getElementById("threePoints").style = "display: block";
   } else if (points == 2) {
-    document.getElementById("points").innerHTML = "2/5";
+    document.getElementById("points").innerHTML = "Kaksi kysymystä oikein, hyvä!";
+    document.getElementById("twoPoints").style = "display: block";
   } else if (points == 1) {
-    document.getElementById("points").innerHTML = "1/5";
+    document.getElementById("points").innerHTML = "Sait yhden pisteen, harjoittele vielä lisää!";
+    document.getElementById("onePoint").style = "display: block";
   } else if (points == 0) {
-    document.getElementById("points").innerHTML = "0/5";
+    document.getElementById("points").innerHTML = "Ei yhtään pistettä, ehkä toisella kertaa paremmin!";
+    document.getElementById("zeroPoints").style = "display: block";
   }
 }
 
 
 /*MUISTA!
 -tarkista kommentit
--tulokset visualisointi
 -funktioiden kommentit ja paikka
--muotoile palauteviestit
 -omien sivujen footer teksti?
 */
