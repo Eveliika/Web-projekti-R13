@@ -72,83 +72,91 @@
       </nav>
 
       <!-- Sivun tekstisisältö -->
-      <div class="container">
+      <div class="container" id="startPage">
         <h1>Matikkavisa</h1>
+        <button id="startExcercise" onclick="startExcercise()">Start</button>
       </div>
 
       <!-- Tehtävä 1 -->
       <div class="container" id="ex1">
         <!-- Progress bar -->
         <div class="progress" id="progress1">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
-          <div class="progress-bar bg-info" id="progressbar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">1/5</div>
+          <!-- Js-koodilla lisätään progressbariin palkkeja. Lisätään tässä ensimmäiseen tehtävään sininen palkki -->
+          
         </div>
         
         <p>Kuinka monta sekuntia on <span id="minutes"></span> minuutissa ja <span id="seconds"></span> sekunnissa?</p>
-        <input type="text" id="answer1">
+        <input type="text" id="answer1" autocomplete="off">
         <button id="submitAnswer1" onclick="checkFirst()">Vastaa</button>
         <p id="result1"></p>
+
+        <button id="next1" onclick="next1()">Next</button>
       </div>
 
       <!-- Tehtävä 2 -->
       <div class="container" id="ex2">
         <!-- Progress bar -->
         <div class="progress" id="progress2">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+          <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
  
         <p>Jos karkkeja on <span id="candyAmount"></span>, ja ne jaetaan tasan 4 lapsen kesken, kuinka monta karkkia kukin lapsi saa?</p>
-        <input type="text" id="answer2">
+        <input type="text" id="answer2" autocomplete="off">
         <button id="submitAnswer2" onclick="checkSecond()">Vastaa</button>
         <p id="result2"></p>
+        <button id="next2" onclick="next2()">Next</button>
       </div>
 
       <!-- Tehtävä 3 -->
       <div class="container" id="ex3">
         <!-- Progress bar -->
         <div class="progress" id="progress3">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+          <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
 
         <p>Pekalla menee <span id="walkingMinutes"></span> minuuttia kävellä kodilta bussipysäkille. Bussilla menee <span id="busMinutes"></span> minuuttia ajaa koululle. Kuinka monta minuuttia Pekalla menee yhteensä päivän aikana koulumatkoihin? Laske meno- ja paluuajat yhteen. </p>
-        <input type="text" id="answer3">
+        <input type="text" id="answer3" autocomplete="off">
         <button id="submitAnswer3" onclick="checkThird()">Vastaa</button>
         <p id="result3"></p>
+        <button id="next3" onclick="next3()">Next</button>
       </div>
 
       <!-- Tehtävä 4 -->
       <div class="container" id="ex4">
         <!-- Progress bar -->
         <div class="progress" id="progress4">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+          <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
 
         <p>Hennalla on <span id="hennaCoins"></span> kolikkoa. Teemulla kolikoita on <span id="teemuCoins"></span>. Montako kolikkoa Teemulla on enemmän kuin Hennalla? </p>
-        <input type="text" id="answer4">
+        <input type="text" id="answer4" autocomplete="off">
         <button id="submitAnswer4" onclick="checkFourth()">Vastaa</button>
         <p id="result4"></p>
+        <button id="next4" onclick="next4()">Next</button>
       </div>
 
       <!-- Tehtävä 5 -->
       <div class="container" id="ex5">
         <!-- Progress bar -->
         <div class="progress" id="progress5">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+          <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
 
         <p>Etana ryömii kolme senttiä minuutissa. Kuinka monta senttiä etana ryömii <span id="snailMinutes"></span> minuutissa?</p>
-        <input type="text" id="answer5">
+        <input type="text" id="answer5" autocomplete="off">
         <button id="submitAnswer5" onclick="checkFifth()">Vastaa</button>
         <p id="result5"></p>
+        <button id="next5" onclick="next5()">Next</button>
       </div>
 
       <div class="container" id="finish">
         <!-- Progress bar -->
         <div class="progress" id="progressFinal">
-          <!-- Oikean tai väärän vastauksen mukaan lisätään js-koodin kautta joko vihreä tai punainen palkki progress bariin -->
+          <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
         <h1>Loppu!</h1>
-        <p id="p">dfsdf</p>
+        <p id="feedback"></p>
+        <button onclick="clearAll()">paina</button>
       </div>
 
       <!--Alatunniste-->
