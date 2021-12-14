@@ -1,88 +1,9 @@
-label {
-    display: block;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#Q2, #Q3, #Q4, #Q5, #results {
-    display: none;
-}
-
-button {
-    display: block;
-    width: 20em;
-    background-color: #6ec6dc;
-    border: 2px solid #43afca;
-    border-radius: 10px;
-    color: white;
-    margin-bottom: 0.2em;
-    padding: 2.5px;
-}
-
-a, a:hover {
-    text-decoration: none;
-    color: white;
-}
-
-button:disabled {
-    background-color: #6ec6dc62;
-}
-
-input {
-    width: 20em;
-    height: 2.5em;
-    border: 2px solid #43afca;
-    border-radius: 10px;
-    margin-bottom: 0.5em;
-    text-align: center;
-}
-
-/*kopioitu style.css*/
 body {
     height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
-}
-
-/*.container {
-    background-color: #cef5e5;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 5px;
-    flex-grow: 1;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding-bottom: 45px;
-}*/
-
-main {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-/*h3 {
-    padding-top: 45px;
-}
-
-p {
-    padding: 30px 100px 0px 100px;
-}*/
-
-footer {
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #ace0c4;
-    text-align: center;
-    padding: 10px;
 }
 
 .fa-carrot {
@@ -95,4 +16,104 @@ footer {
     color: orange;
     padding-bottom: 20px;
     padding-left: 10px;
+}
+
+main {
+    background-color: #ffb64965;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    margin: 25px;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.progress {
+    width: 75vw;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 800px;
+}
+
+.container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Q2, #Q3, #Q4, #Q5, #results {
+    display: none;
+}
+
+input {
+    width: 20em;
+    height: 2.5em;
+    border: 2px solid #00733E;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.wideButtons {
+    display: block;
+    width: 20em;
+    background-color: #2d9466;
+    border: 2px solid #00733E;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 2px;
+    padding: 2.5px;
+}
+
+.wideButtons:disabled {
+    background-color: #2d946696;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ace0c4;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        margin: 20px 0px 20px 0px;
+        border-radius: 0;
+    }
+
+    .progress {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .wideButtons {
+        width: 15em;
+    }
+
+    input {
+        width: 15em;
+    }
 }

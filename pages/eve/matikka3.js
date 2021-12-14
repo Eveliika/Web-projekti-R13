@@ -41,7 +41,7 @@ document.getElementById("check1").onclick = function checkAnswer1() {
   let rightAnswer1 = Number(document.getElementById("euros").innerHTML) - Number(document.getElementById("price").innerHTML);
   //Lukitaan input-kenttä
   document.getElementById("answer1").disabled = true;
-  getFeedBack("answer1", "next1", rightAnswer1);
+  getFeedBack("answer1", "next1", "check1", rightAnswer1);
 }
 
 //Lasku 2
@@ -49,7 +49,7 @@ document.getElementById("check2").onclick = function checkAnswer2() {
   let rightAnswer2 = Number(document.getElementById("pears").innerHTML) * Number(document.getElementById("baskets").innerHTML);
   //Lukitaan input-kenttä
   document.getElementById("answer2").disabled = true;
-  getFeedBack("answer2", "next2", rightAnswer2);
+  getFeedBack("answer2", "next2", "check2", rightAnswer2);
 }
 
 //Lasku3
@@ -57,7 +57,7 @@ document.getElementById("check3").onclick = function checkAnswer3() {
   let rightAnswer3 = Number(document.getElementById("candy").innerHTML) / 2;
   //Lukitaan input-kenttä
   document.getElementById("answer3").disabled = true;
-  getFeedBack("answer3", "next3", rightAnswer3);
+  getFeedBack("answer3", "next3", "check3", rightAnswer3);
 }
 
 //Lasku 4
@@ -65,7 +65,7 @@ document.getElementById("check4").onclick = function checkAnswer4() {
   let rightAnswer4 = 20 - (Number(document.getElementById("euro1").innerHTML) + Number(document.getElementById("euro2").innerHTML));
   //Lukitaan input-kenttä
   document.getElementById("answer4").disabled = true;
-  getFeedBack("answer4", "next4", rightAnswer4);
+  getFeedBack("answer4", "next4", "check4", rightAnswer4);
 }
 
 //Lasku 5
@@ -73,7 +73,7 @@ document.getElementById("check5").onclick = function checkAnswer5() {
   let rightAnswer5 = Number(document.getElementById("students1").innerHTML) + Number(document.getElementById("students2").innerHTML) + Number(document.getElementById("students3").innerHTML);
   //Lukitaan input-kenttä
   document.getElementById("answer5").disabled = true;
-  getFeedBack("answer5", "showResults", rightAnswer5);
+  getFeedBack("answer5", "showResults", "check5", rightAnswer5);
 }
 
 /**
@@ -82,12 +82,14 @@ document.getElementById("check5").onclick = function checkAnswer5() {
  * @param {string} next "Seuraava kysymys"-painikkeen id/"Näytä tulokset"-painikkeen id, heittomerkeissä
  * @param {*} rightAnswer Muuttuja, johon laskettu oikea vastaus
  */
-function getFeedBack(answer, next, rightAnswer) {
+function getFeedBack(answer, next, check, rightAnswer) {
 
   if (document.getElementById(answer).value == rightAnswer) {
     feedback.innerHTML = "Oikein!";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
+    //Lukitaan "Tarkista vastaus"-painike
+    document.getElementById(check).disabled = true;
     points += 1;
   } else if (document.getElementById(answer).value == "") {
     feedback.innerHTML = "Vastaus puuttuu, yritä uudelleen!";
@@ -108,11 +110,12 @@ function getFeedBack(answer, next, rightAnswer) {
     feedback.innerHTML = "Väärin! Oikea vastaus on " + rightAnswer + ".";
     //Avataan "Seuraava kysymys"-painikkeen lukitus
     document.getElementById(next).disabled = false;
+    //Lukitaan "Tarkista vastaus"-painike
+    document.getElementById(check).disabled = true;
   }
 }
 
 
-//NÄILLE FUNKTIO??
 //Piilotetaan edellinen kysymys ja näytetään seuraava kysymys
 document.getElementById("next1").onclick = function showQuestion2() {
   document.getElementById("Q1").style = "display: none";
@@ -163,23 +166,11 @@ document.getElementById("showResults").onclick = function showResults() {
   }
 }
 
-/**
- * EI TOIMI OIKEIN KUTSUTTAESSA??
- * @param {*} previousQuestion 
- * @param {*} nextQuestion 
- */
-/*function showNextQuestion(previousQuestion, nextQuestion) {
-  document.getElementById(previousQuestion).style = "display: none";
-  document.getElementById(nextQuestion).style = "display: inline";
-  feedback.innerHTML = "";
-  
-}*/
-
-
 
 /*MUISTA!
 -tarkista kommentit
 -tulokset visualisointi
 -funktioiden kommentit ja paikka
 -muotoile palauteviestit
+-omien sivujen footer teksti?
 */
