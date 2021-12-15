@@ -108,6 +108,10 @@ input {
     text-align: center;
 }
 
+span {
+    font-weight: bold;
+}
+
 @media screen and (max-width: 992px) {
     p {
         padding: 20px 50px 10px 50px;
