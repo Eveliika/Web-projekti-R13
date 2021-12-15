@@ -34,6 +34,10 @@ p {
     padding: 30px 100px 0px 100px;
 }
 
+.editedP {
+    padding-top: 15px;
+}
+
 footer {
     height: auto;
     width: 100%;
