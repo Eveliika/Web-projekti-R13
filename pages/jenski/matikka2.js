@@ -50,12 +50,12 @@ let wrong = "Harmi, vastasit väärin. Oikea vastaus on "
 let empty = "Syötä vastaus."
 let notANumber = "Syötä vastaus numeroina."
 
-let zeroRight = "0 oikein";
-let oneRight = "1 oikein";
-let twoRight = "2 oikein";
-let threeRight = "3 oikein";
-let fourRight = "4 oikein";
-let fiveRight = "5 oikein";
+let zeroRight = "Vastasit <strong>0</strong> kysymykseen oikein. Yritä uudelleen!";
+let oneRight = "Sait <strong>1</strong> oikein. Vielä kannattaa harjoitella!";
+let twoRight = "Sait <strong>2</strong> oikein. Melko hyvin, mutta harjoittele vielä!";
+let threeRight = "Sait <strong>3</strong> oikein. Hyvä, vastasit oikein yli puoleen!";
+let fourRight = "Sait <strong>4</strong> oikein. Hienoa, lähes täydet pisteet!";
+let fiveRight = "Sait <strong>5</strong> oikein. Vau, olet oikea mestari!";
 
 // Laskuri oikeille vastauksille
 let rightAnswerCounter = 0;
@@ -139,8 +139,6 @@ function startExcercise() {
 function checkFirst() {
     let rightAnswer = (minutes * 60) + seconds;
 
-    console.log(rightAnswer);
-    
     if (answer1.value == rightAnswer) {
         result1.innerHTML = right; 
         // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
@@ -155,7 +153,7 @@ function checkFirst() {
             result1.innerHTML = empty
             return result1; 
         } else {
-            result1.innerHTML = wrong + rightAnswer + ".";
+            result1.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
             // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(1)
             progress1.innerHTML = progressBar; 
@@ -163,7 +161,7 @@ function checkFirst() {
     }
     // Suljetaan vastausinput ja -nappi
     toggleAnswer(1, true);
-    // Lisätään progressbarin tilanne tehtävä 2:sen progressbariin ja sininen palkki kertomaan monesko tehtävä on menossa
+    // Lisätään progressbarin tilanne
     progress2.innerHTML = progressBar + nextBar(2);
     // laitetaan next-nappi näkyviin 
     toggleVisibility("next1", "inline-block");
@@ -174,8 +172,6 @@ function checkFirst() {
 // Toinen lasku
 function checkSecond() {
     let rightAnswer = candies / 4
-
-    console.log(rightAnswer);
 
     if (answer2.value == rightAnswer) {
         result2.innerHTML = right
@@ -191,7 +187,7 @@ function checkSecond() {
             result2.innerHTML = empty
             return result2; 
         } else {
-            result2.innerHTML = wrong + rightAnswer + ".";
+            result2.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
             // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(2);
             progress2.innerHTML = progressBar;
@@ -201,7 +197,7 @@ function checkSecond() {
     // Suljetaan vastausinput ja -nappi
     toggleAnswer(2, true);
 
-    // Lisätään progressbarin tilanne tehtävä 3:sen progressbariin ja sininen palkki kertomaan monesko tehtävä on menossa
+    // Lisätään progressbarin tilanne
     progress3.innerHTML = progressBar + nextBar(3);
 
     // laitetaan next-nappi näkyviin 
@@ -214,8 +210,6 @@ function checkSecond() {
 // Kolmas lasku
 function checkThird() {
     let rightAnswer = (busMinutes * 2) + (walkingMinutes * 2);
-
-    console.log(rightAnswer);
 
     if (answer3.value == rightAnswer) {
         result3.innerHTML = right
@@ -231,7 +225,7 @@ function checkThird() {
             result3.innerHTML = empty
             return result3; 
         } else {
-            result3.innerHTML = wrong + rightAnswer + ".";
+            result3.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
             // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(3);
             progress3.innerHTML = progressBar;
@@ -240,7 +234,7 @@ function checkThird() {
     // Suljetaan vastausinput ja -nappi
     toggleAnswer(3, true);
 
-    // Lisätään progressbarin tilanne tehtävä 4:sen progressbariin ja sininen palkki kertomaan monesko tehtävä on menossa
+    // Lisätään progressbarin tilanne
     progress4.innerHTML = progressBar + nextBar(4);
 
     // laitetaan next-nappi näkyviin 
@@ -253,8 +247,6 @@ function checkThird() {
 // Neljäs lasku
 function checkFourth() {
     let rightAnswer = teemuCoins - hennaCoins;
-
-    console.log(rightAnswer);
 
     if (answer4.value == rightAnswer) {
         result4.innerHTML = right
@@ -270,7 +262,7 @@ function checkFourth() {
             result4.innerHTML = empty
             return result4; 
         } else {
-            result4.innerHTML = wrong + rightAnswer + ".";
+            result4.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
             // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(4);
             progress4.innerHTML = progressBar;
@@ -279,7 +271,7 @@ function checkFourth() {
     // Suljetaan vastausinput ja -nappi
     toggleAnswer(4, true);
 
-    // Lisätään progressbarin tilanne tehtävä 5:sen progressbariin ja sininen palkki kertomaan monesko tehtävä on menossa
+    // Lisätään progressbarin tilanne
     progress5.innerHTML = progressBar + nextBar(5);
 
     // next-nappi näkyviin 
@@ -292,8 +284,6 @@ function checkFourth() {
 // Viides lasku
 function checkFifth() {
     let rightAnswer = snailMinutes * 3;
-
-    console.log(rightAnswer);
 
     if (answer5.value == rightAnswer) {
         result5.innerHTML = right
@@ -309,7 +299,7 @@ function checkFifth() {
             result5.innerHTML = empty
             return result5; 
         } else {
-            result5.innerHTML = wrong + rightAnswer + ".";
+            result5.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
             // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(5);
             progress5.innerHTML = progressBar;
