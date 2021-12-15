@@ -5,27 +5,31 @@ function getRndInteger(min, max) {
   }
 
 let feedback = document.getElementById("feedback");
+
+//Laskuri oikein vastatuille kysymyksille
 let points = 0;
 
-//1. laskun arvojen määritteleminen
+
+//Arvojen määritteleminen laskuille
 document.getElementById("euros").innerHTML = getRndInteger(5, 15);
 document.getElementById("price").innerHTML = getRndInteger(2, 4);
-//2. laskun arvojen määritteleminen
+
 document.getElementById("pears").innerHTML = getRndInteger(3, 10);
 document.getElementById("baskets").innerHTML = getRndInteger(2, 10);
-//3. laskun parillisen arvon määritteleminen
-let amount;
+
+let amount;   //parillinen arvo
 do {
   amount = getRndInteger(10, 30)
 } while( amount % 2 == 1 );
 document.getElementById("candy").innerHTML = amount;
-//4. laskun arvojen määritteleminen
+
 document.getElementById("euro1").innerHTML = getRndInteger(4, 9);
 document.getElementById("euro2").innerHTML = getRndInteger(4, 9);
-//5.laskun arvojen määritteleminen
+
 document.getElementById("students1").innerHTML = getRndInteger(10, 20);
 document.getElementById("students2").innerHTML = getRndInteger(10, 20);
 document.getElementById("students3").innerHTML = getRndInteger(10, 20);
+
 
 //Lukitaan "Seuraava kysymys"-painikkeet
 document.getElementById("next1").disabled = true;
@@ -39,79 +43,63 @@ document.getElementById("showResults").disabled = true;
 //Lasku 1
 document.getElementById("check1").onclick = function checkAnswer1() {
   let rightAnswer1 = Number(document.getElementById("euros").innerHTML) - Number(document.getElementById("price").innerHTML);
-  //Lukitaan input-kenttä
-  document.getElementById("answer1").disabled = true;
   getFeedBack("answer1", "next1", "check1", rightAnswer1);
 }
 
 //Lasku 2
 document.getElementById("check2").onclick = function checkAnswer2() {
   let rightAnswer2 = Number(document.getElementById("pears").innerHTML) * Number(document.getElementById("baskets").innerHTML);
-  //Lukitaan input-kenttä
-  document.getElementById("answer2").disabled = true;
   getFeedBack("answer2", "next2", "check2", rightAnswer2);
 }
 
 //Lasku3
 document.getElementById("check3").onclick = function checkAnswer3() {
   let rightAnswer3 = Number(document.getElementById("candy").innerHTML) / 2;
-  //Lukitaan input-kenttä
-  document.getElementById("answer3").disabled = true;
   getFeedBack("answer3", "next3", "check3", rightAnswer3);
 }
 
 //Lasku 4
 document.getElementById("check4").onclick = function checkAnswer4() {
   let rightAnswer4 = 20 - (Number(document.getElementById("euro1").innerHTML) + Number(document.getElementById("euro2").innerHTML));
-  //Lukitaan input-kenttä
-  document.getElementById("answer4").disabled = true;
   getFeedBack("answer4", "next4", "check4", rightAnswer4);
 }
 
 //Lasku 5
 document.getElementById("check5").onclick = function checkAnswer5() {
   let rightAnswer5 = Number(document.getElementById("students1").innerHTML) + Number(document.getElementById("students2").innerHTML) + Number(document.getElementById("students3").innerHTML);
-  //Lukitaan input-kenttä
-  document.getElementById("answer5").disabled = true;
   getFeedBack("answer5", "showResults", "check5", rightAnswer5);
 }
 
+
 /**
- * Tarkistetaan onko käyttäjän syöttämä vastaus oikein ja annetaan palaute
- * @param {string} answer Vastauskentän id, heittomerkeissä
- * @param {string} next "Seuraava kysymys"-painikkeen id/"Näytä tulokset"-painikkeen id, heittomerkeissä
+ * Tarkistetaan onko käyttäjän syöttämä vastaus oikein ja annetaan virheviesti/palaute
+ * @param {string} answer Vastauskentän id
+ * @param {string} next "Seuraava kysymys"/"Näytä tulokset" -painikkeen id
+ * @param {string} check "Tarkista vastaus" -painikkeen id
  * @param {*} rightAnswer Muuttuja, johon laskettu oikea vastaus
  */
 function getFeedBack(answer, next, check, rightAnswer) {
 
   if (document.getElementById(answer).value == rightAnswer) {
     feedback.innerHTML = "Oikein!";
-    //Avataan "Seuraava kysymys"-painikkeen lukitus
-    document.getElementById(next).disabled = false;
-    //Lukitaan "Tarkista vastaus"-painike
+    document.getElementById(answer).disabled = true;
     document.getElementById(check).disabled = true;
+    document.getElementById(next).disabled = false;
     points += 1;
   } else if (document.getElementById(answer).value == "") {
     feedback.innerHTML = "Vastaus puuttuu, yritä uudelleen!";
-    //Avataan vastauskentän lukitus
-    document.getElementById(answer).disabled = false;
-    //Lukitaan "Seuraava kysymys"-painike
     document.getElementById(next).disabled = true;
-    //Viedään kursori takaisin vastauskenttään
     document.getElementById(answer).focus();
   } else if (isNaN(document.getElementById(answer).value)) {
     feedback.innerHTML = "Vastaus täytyy antaa numerona, yritä uudelleen!";
-    document.getElementById(answer).disabled = false;
     document.getElementById(next).disabled = true;
     document.getElementById(answer).focus();
-    //Tyhjennetään vastauskenttä
     document.getElementById(answer).value = "";
   } else {
     feedback.innerHTML = "Väärin! Oikea vastaus on " + rightAnswer + ".";
-    //Avataan "Seuraava kysymys"-painikkeen lukitus
-    document.getElementById(next).disabled = false;
-    //Lukitaan "Tarkista vastaus"-painike
+    document.getElementById(answer).disabled = true;
     document.getElementById(check).disabled = true;
+    document.getElementById(next).disabled = false;
   }
 }
 
@@ -156,7 +144,7 @@ document.getElementById("showResults").onclick = function showResults() {
   document.getElementById("results").style = "display: inline";
   feedback.innerHTML = "";
 
-  //Tulostetaan tulokset
+  //Tulostetaan tulokset ja progress bar
   if (points == 5) {
     document.getElementById("points").innerHTML = "Sait täydet pisteet, loistavaa!";
     document.getElementById("fivePoints").style = "display: block";
@@ -180,7 +168,5 @@ document.getElementById("showResults").onclick = function showResults() {
 
 
 /*MUISTA!
--tarkista kommentit
--funktioiden kommentit ja paikka
 -omien sivujen footer teksti?
 */
