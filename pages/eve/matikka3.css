@@ -6,6 +6,8 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+
+/*Navbar*/
 .fa-carrot {
     color: orange; 
 }
@@ -18,6 +20,8 @@ body {
     padding-left: 10px;
 }
 
+
+/*Tehtäväosio*/
 main {
     background-color: #ffb64965;
     display: flex;
@@ -108,6 +112,8 @@ a, a:hover {
     display: none;
 }
 
+
+/*Alatunniste*/
 footer {
     height: auto;
     width: 100%;
@@ -118,6 +124,8 @@ footer {
     padding: 10px;
 }
 
+
+/*Responsiivisuus*/
 @media screen and (max-width: 400px) {
     main {
         margin: 20px 0px 20px 0px;
