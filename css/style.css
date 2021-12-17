@@ -62,9 +62,15 @@ footer {
 }
 
 #carrotsImg {
-    width: 30%;
+    width: 40%;
     margin: auto;
-    padding: 40px 20px 30px 0px;
+    padding: 40px 90px 60px 0px;
+}
+
+.editedP {
+    padding: 30px 100px 0px 90px;
+    margin-top: 30px;
+    font-size: 1.15em;
 }
 
 #info {
@@ -73,19 +79,65 @@ footer {
     flex-direction: row;
 }
 
-#infoP {
-    padding: 30px 50px 0px 50px;
+#infoHeader {
+    padding-top: 45px;
+    padding-bottom: 30px;
+    border-bottom: 2px dotted rgb(149, 214, 176);
 }
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 992px) {
+
+    .editedP {
+        padding: 10px 50px 0px 50px;
+        margin-top: 30px;
+    }
+
+    #carrotsImg {
+        width: 40%;
+        margin: auto;
+        padding: 40px 50px 60px 0px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    #info {
+        display: block;
+        flex-direction: row;
+    }
+
     p {
         padding: 20px;
     }
+
+    .editedP {
+        padding: 30px 50px 0px 50px;
+        margin-top: 30px;
+        font-size: 1.15em;
+    }
+
+    #carrotsImg {
+        width: 50%;
+        margin: auto;
+        padding: 60px 0px 60px 10px;
+    }
+
 }
 
 @media screen and (max-width: 575px) {
+
     .container {
         border-radius: 0;
     }
+
+    p {
+        padding: 50px 100px 10px 100px;
+    }
+
+    #calculatorImg {
+        width: 80%;
+    }
+    
 }
