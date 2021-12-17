@@ -149,7 +149,7 @@ document.getElementById("showResults").onclick = function showResults() {
     document.getElementById("points").innerHTML = "Sait täydet pisteet, loistavaa!";
     document.getElementById("fivePoints").style = "display: block";
   } else if (points == 4) {
-    document.getElementById("points").innerHTML = "Vastasit oikein neljään kysymykseen, hienoa";
+    document.getElementById("points").innerHTML = "Vastasit oikein neljään kysymykseen, hienoa!";
     document.getElementById("fourPoints").style = "display: block";
   } else if (points == 3) {
     document.getElementById("points").innerHTML = "Vastasit oikein kolmeen kysymykseen, hyvä!";
