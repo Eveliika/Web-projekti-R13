@@ -165,8 +165,3 @@ document.getElementById("showResults").onclick = function showResults() {
     document.getElementById("zeroPoints").style = "display: block";
   }
 }
-
-
-/*MUISTA!
--omien sivujen footer teksti?
-*/

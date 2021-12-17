@@ -23,7 +23,7 @@ body {
 
 /*Tehtäväosio*/
 main {
-    background-color: #ffb64965;
+    background-color: #ffb64977;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -66,7 +66,12 @@ label {
 }
 
 #info {
-    padding-top: 35px;
+    background-color: #ffb64965;
+    height: auto;
+    width: auto;
+    padding: 65px;
+    margin-top: 25px;
+    box-shadow: 0px 0px 13px 5px #a7762c65;
 }
 
 #startTest, #tryAgain {
@@ -102,6 +107,15 @@ input {
     background-color: #2d946696;
 }
 
+#results {
+    background-color: #ffb64965;
+    height: auto;
+    width: auto;
+    padding: 65px;
+    margin-top: 25px;
+    box-shadow: 0px 0px 13px 5px #a7762c65;
+}
+
 a, a:hover {
     text-decoration: none;
     color: white;
@@ -126,6 +140,22 @@ footer {
 
 
 /*Responsiivisuus*/
+@media screen and (max-width: 578px) {
+    #info {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .wideButtons {
+        width: 98%;
+    }
+
+    input {
+        width: 98%;
+    }
+}
+
 @media screen and (max-width: 400px) {
     main {
         margin: 20px 0px 20px 0px;
@@ -134,15 +164,5 @@ footer {
 
     .progress {
         width: 95vw;
-    }
-}
-
-@media screen and (max-width: 340px) {
-    .wideButtons {
-        width: 15em;
-    }
-
-    input {
-        width: 15em;
     }
 }
