@@ -1,9 +1,9 @@
 // Jenni Lohi
 
-// tehdään randomilukufunktio
+// Luodaan randomilukufunktio
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
-  }
+}
 
 // Arvotaan numerot
 let minutes = getRndInteger(1, 3);
