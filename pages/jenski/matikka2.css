@@ -80,6 +80,15 @@ h1 {
     height: auto;
     margin: 30px;
     box-shadow: 0px 0px 15px 3px rgb(139, 207, 212) ;
+    padding-top: 35px;
+}
+
+#lessPadding {
+    padding-top: 20px;
+}
+
+#startContent, #endContent {
+    padding-top: 60px;
 }
 
 .progress {
@@ -92,6 +101,7 @@ h1 {
     border: rgb(0, 38, 255);
     transition: none;
 }
+
 .btn-primary:hover, .btn-primary:focus {
     background-color: rgb(51, 197, 117); 
 }
@@ -104,7 +114,8 @@ span {
     font-weight: bold;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
+
     p {
         padding: 20px 50px 10px 50px;
         min-height: auto;
@@ -118,10 +129,21 @@ span {
     .content {
         min-height: 460px;
         height: auto;
+        padding-top: 75px;
     }
+
+    #lessPadding {
+        padding-top: 50px;
+    }
+
+    #startContent, #endContent {
+        padding-top: 90px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
+
     p {
         padding: 20px 40px 10px 40px;
         min-height: auto;
@@ -136,10 +158,16 @@ span {
         min-height: 460px;
         height: auto;
     }
+
+    #lessPadding {
+        padding-top: 20px;
+    }
+
 }
     
 
 @media screen and (max-width: 505px) {
+
     p {
         padding: 20px 30px 10px 30px;
         min-height: auto;
@@ -155,5 +183,4 @@ span {
         height: auto;
     }
     
-
 }

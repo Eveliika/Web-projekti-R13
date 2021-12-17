@@ -74,7 +74,7 @@
 
       <!-- Sivun tekstisisältö -->
       <div class="container" id="startPage">
-        <div class="content">
+        <div class="content" id="startContent">
           <h1>Matikkavisa</h1>
           <p>Tässä visassa on viisi sanallista matematiikan tehtävää. Testaa osaamisesi! </p>
           <button id="startExcercise" class="btn btn-primary" onclick="startExcercise()">Aloita visa!</button>
@@ -117,8 +117,8 @@
         <div class="progress" id="progress3">
           <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
-        <div class="content">
-          <p>Pekalla menee <span id="walkingMinutes"></span> minuuttia kävellä kodilta bussipysäkille. Bussilla menee <span id="busMinutes"></span> minuuttia ajaa koululle. Kuinka monta minuuttia Pekalla menee yhteensä päivän aikana koulumatkoihin? Laske meno- ja paluuajat yhteen. </p>
+        <div class="content" id="lessPadding">
+          <p>Pekka kävelee <span id="walkingMinutes"></span> minuutissa kotoa bussipysäkille. Bussi ajaa <span id="busMinutes"></span> minuutissa koululle. Montako minuuttia Pekalla menee yhteensä päivän aikana edestakaisiin koulumatkoihin?</p>
           <input type="text" id="answer3" autocomplete="off">
           <button id="submitAnswer3" class="btn btn-primary" onclick="checkThird()">Vastaa</button>
           <p id="result3"></p>
@@ -161,7 +161,7 @@
         <div class="progress" id="progressFinal">
           <!-- Js-koodilla lisätään progressbariin palkkeja -->
         </div>
-        <div class="content">
+        <div class="content" id="endContent">
           <h1>Hienoa, pääsit loppuun asti!</h1>
           <p id="feedback"></p>
           <button class="btn btn-primary" onclick="clearAll()">Aloita alusta!</button>
