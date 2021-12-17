@@ -26,6 +26,22 @@ body {
     padding-bottom: 45px;
 }
 
+.content {
+    height: auto;
+    width: auto;
+    background-color: rgba(232, 255, 241, 0.719);
+    margin: 40px 20px 0px 20px;
+    box-shadow: 0px 0px 15px 3px rgba(122, 172, 141, 0.562)
+}
+
+.content2 {
+    height: auto;
+    width: auto;
+    background-color: rgba(232, 255, 241, 0.719);
+    margin: 40px 20px 0px 20px;
+    box-shadow: 0px 0px 15px 3px rgba(122, 172, 141, 0.562)
+}
+
 h3 {
     padding-top: 45px;
 }
@@ -68,7 +84,7 @@ footer {
 }
 
 .editedP {
-    padding: 30px 100px 0px 90px;
+    padding: 20px 100px 30px 90px;
     margin-top: 30px;
     font-size: 1.15em;
 }
@@ -80,16 +96,19 @@ footer {
 }
 
 #infoHeader {
-    padding-top: 45px;
+    background-color: rgba(232, 255, 241, 0.719);
+    margin: 40px 20px 0px 20px;
+    box-shadow: 0px 0px 15px 3px rgba(122, 172, 141, 0.562);
+    padding-top: 30px;
     padding-bottom: 30px;
-    border-bottom: 2px dotted rgb(149, 214, 176);
+    
 }
 
 
 @media screen and (max-width: 992px) {
 
     .editedP {
-        padding: 10px 50px 0px 50px;
+        padding: 40px 50px 50px 50px;
         margin-top: 30px;
     }
 
@@ -124,6 +143,11 @@ footer {
         padding: 60px 0px 60px 10px;
     }
 
+    #calculatorImg {
+        width: 80%;
+    }
+
+
 }
 
 @media screen and (max-width: 575px) {
@@ -133,11 +157,11 @@ footer {
     }
 
     p {
-        padding: 50px 100px 10px 100px;
+        padding: 30px 100px 10px 100px;
     }
 
     #calculatorImg {
         width: 80%;
     }
-    
+
 }

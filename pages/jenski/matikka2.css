@@ -6,14 +6,6 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-/* Tallennan tähän sivustolla käytettävät värit*/
-.class {
-    background-color:
-     #00B060 #218457 #00733E #36D88E  #61D8A2
-     #FF9500	#BF8430 #A66100, #FFB040 #FFC573
-     #DE0052 #A62A58 #900035 #EE3C7E #EE6B9C;
-}
-
 .container {
     background-color: rgb(162, 243, 207);
     background-image: url(images/chris-liverani-ViEBSoZH6M4-unsplash.jpg);
