@@ -1,7 +1,6 @@
 // Jenni Lohi
 
-// Lisää nappeja, lisää feedbacktekstiä, ehkä kuvia riippuen mikä tulos?
-
+// tehdään randomilukufunktio
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
@@ -45,11 +44,11 @@ let progress5 = document.getElementById("progress5");
 let progressFinal = document.getElementById("progressFinal");
 let feedback = document.getElementById("feedback");
 
+// Tallennetaan muuttujiin palaute 
 let right = "Hienoa, vastasit oikein!"
 let wrong = "Harmi, vastasit väärin. Oikea vastaus on "
 let empty = "Syötä vastaus."
 let notANumber = "Syötä vastaus numeroina."
-
 let zeroRight = "Vastasit <strong>0</strong> kysymykseen oikein. Yritä uudelleen!";
 let oneRight = "Sait <strong>1</strong> oikein. Vielä kannattaa harjoitella!";
 let twoRight = "Sait <strong>2</strong> oikein. Melko hyvin, mutta harjoittele vielä!";
@@ -57,40 +56,39 @@ let threeRight = "Sait <strong>3</strong> oikein. Hyvä, vastasit oikein yli puo
 let fourRight = "Sait <strong>4</strong> oikein. Hienoa, lähes täydet pisteet!";
 let fiveRight = "Sait <strong>5</strong> oikein. Vau, olet oikea mestari!";
 
-// Laskuri oikeille vastauksille
+// Laskuri oikeille vastauksille & vastatuille kysymyksille
 let rightAnswerCounter = 0;
-// Laskuri vastatuille kysymyksille
 let answeredCounter = 0;
-// Lisätään muuttuja progressbarille
+// Muuttuja progressbarille
 let progressBar = "";
 
 // asetetaan ensiksi sininen palkki
 progress1.innerHTML = '<div class="progress-bar bg-info" id="progressbar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">1/5</div>'
 
-// Tehdään funktio, joka palauttaa koodin joka lisää progressbariin vihreän palkin ja lisää siihen parametrina annetun numeron joka kertoo, montako tehtävää tehty
+// Funktio, joka lisää progressbariin vihreän palkin ja lisää siihen parametrina annetun numeron joka kertoo, montako tehtävää tehty
 function progressRight(n) {
     return '<div class="progress-bar bg-success" name="progressbar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">' + n + '/5</div>'
 }
 
-// Tallennetaan uuteen muuttujaan koodi joka lisää progressbariin punaisen palkin ja lisää siihen parametrina annetun numeron joka kertoo, montako tehtävää tehty
+// Funktio, joka lisää progressbariin punaisen palkin ja lisää siihen parametrina annetun numeron joka kertoo, montako tehtävää tehty
 function progressWrong(n) {
     return '<div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">'+ n + '/5</div>';
 }
 
-// Tallennetaan muuttujaan koodi jolla lisätään seuraavaan tehtävään sininen progressbarin lohko ja lisää siihen parametrina annetun numeron joka kertoo, monesko tehtävä menossa
+// Funktio jolla lisätään seuraavaan tehtävään sininen progressbarin lohko ja lisää siihen parametrina annetun numeron joka kertoo, monesko tehtävä menossa
 function nextBar(n) {
     return '<div class="progress-bar bg-info" id="progressbar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">' + n + '/5</div>'
 }
 
 // Funktio vastausinputin ja -napin sulkemiselle
-function toggleAnswer(number, boolean) {
-    document.getElementById("answer" + (number)).disabled = boolean;
-    document.getElementById("submitAnswer" + (number)).disabled = boolean;
+function disableAnswer(number) {
+    document.getElementById("answer" + (number)).disabled = true;
+    document.getElementById("submitAnswer" + (number)).disabled = true;
 }
 
 // Luodaan funktio jolla voidaan vaihtaa divien näkymistä
-function toggleVisibility(id, toggle) {
-    document.getElementById(id).style.display = toggle;
+function toggleVisibility(id, display) {
+    document.getElementById(id).style.display = display;
 }
 
 // next-napeille funktiot että laittaa nykysen divin pois ja seuraavan näkyviin
@@ -110,7 +108,7 @@ function next4() {
     toggleVisibility("ex4", "none");
     toggleVisibility("ex5", "block");
 }
-function next5() {
+function results() {
     toggleVisibility("ex5", "none");
     toggleVisibility("finish", "block");
 }
@@ -127,7 +125,7 @@ toggleVisibility("next1", "none");
 toggleVisibility("next2", "none");
 toggleVisibility("next3", "none");
 toggleVisibility("next4", "none");
-toggleVisibility("next5", "none");
+toggleVisibility("results", "none");
 
 // Aloitusnappia painaessa laitetaan aloitusdivi pois ja ensimmäinen tehtävädivi näkyviin
 function startExcercise() {
@@ -137,8 +135,10 @@ function startExcercise() {
 
 // Ensimmäinen lasku
 function checkFirst() {
+    // Tallennetaan oikea vastaus muuttujaan
     let rightAnswer = (minutes * 60) + seconds;
-
+    // Tarkistetaan onko vastaus oikein vai ei sekä onko vastausta annettu ollenkaan ja onko se numeroina.
+    // Jos oikein, 
     if (answer1.value == rightAnswer) {
         result1.innerHTML = right; 
         // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
@@ -146,36 +146,38 @@ function checkFirst() {
         progress1.innerHTML = progressBar;
         rightAnswerCounter++;
     } else {
+        // Jos ei ole numero, palautetaan virheviesti
         if (isNaN(answer1.value)) {
             result1.innerHTML = notANumber; 
             return result1;
+        // Jos tyhjä, palautetaan virheviesti
         } else if (answer1.value == "" || answer1.value == " ") {
             result1.innerHTML = empty
             return result1; 
+        // Jos väärin,
         } else {
+            // Näytetään tulos-elementissä palaute ja oikea vastaus,
             result1.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
-            // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
+            // ja tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(1)
             progress1.innerHTML = progressBar; 
         }
     }
     // Suljetaan vastausinput ja -nappi
-    toggleAnswer(1, true);
-    // Lisätään progressbarin tilanne
-    progress2.innerHTML = progressBar + nextBar(2);
+    disableAnswer(1);
     // laitetaan next-nappi näkyviin 
     toggleVisibility("next1", "inline-block");
+    // Lisätään progressbarin tilanne
+    progress2.innerHTML = progressBar + nextBar(2);
     // Palautetaan progressbar
     return progressBar;
 } 
 
-// Toinen lasku
+// Toinen lasku, käytetään samaa kaavaa kuin ensimmäisessä
 function checkSecond() {
     let rightAnswer = candies / 4
-
     if (answer2.value == rightAnswer) {
         result2.innerHTML = right
-        // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
         progressBar += progressRight(2);
         progress2.innerHTML = progressBar;
         rightAnswerCounter++;
@@ -188,32 +190,22 @@ function checkSecond() {
             return result2; 
         } else {
             result2.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
-            // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(2);
             progress2.innerHTML = progressBar;
         }
     }
 
-    // Suljetaan vastausinput ja -nappi
-    toggleAnswer(2, true);
-
-    // Lisätään progressbarin tilanne
-    progress3.innerHTML = progressBar + nextBar(3);
-
-    // laitetaan next-nappi näkyviin 
+    disableAnswer(2);
     toggleVisibility("next2", "inline-block");
-    
-    // Palautetaan progressbar
+    progress3.innerHTML = progressBar + nextBar(3);
     return progressBar;
 }
 
-// Kolmas lasku
+// Kolmas lasku, sama kaava kuin 1.
 function checkThird() {
     let rightAnswer = (busMinutes * 2) + (walkingMinutes * 2);
-
     if (answer3.value == rightAnswer) {
         result3.innerHTML = right
-        // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
         progressBar += progressRight(3);
         progress3.innerHTML = progressBar;
         rightAnswerCounter++;
@@ -226,31 +218,22 @@ function checkThird() {
             return result3; 
         } else {
             result3.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
-            // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(3);
             progress3.innerHTML = progressBar;
         }
     }
-    // Suljetaan vastausinput ja -nappi
-    toggleAnswer(3, true);
 
-    // Lisätään progressbarin tilanne
-    progress4.innerHTML = progressBar + nextBar(4);
-
-    // laitetaan next-nappi näkyviin 
+    disableAnswer(3);
     toggleVisibility("next3", "inline-block");
-
-    // Palautetaan progressbar
+    progress4.innerHTML = progressBar + nextBar(4);
     return progressBar;
 }
 
-// Neljäs lasku
+// Neljäs lasku, sama kaava kuin 1.
 function checkFourth() {
     let rightAnswer = teemuCoins - hennaCoins;
-
     if (answer4.value == rightAnswer) {
         result4.innerHTML = right
-        // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
         progressBar += progressRight(4);
         progress4.innerHTML = progressBar;
         rightAnswerCounter++;
@@ -263,31 +246,23 @@ function checkFourth() {
             return result4; 
         } else {
             result4.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
-            // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(4);
             progress4.innerHTML = progressBar;
         }
     }
-    // Suljetaan vastausinput ja -nappi
-    toggleAnswer(4, true);
 
-    // Lisätään progressbarin tilanne
-    progress5.innerHTML = progressBar + nextBar(5);
-
-    // next-nappi näkyviin 
+    disableAnswer(4);
     toggleVisibility("next4", "inline-block");
-
-    // Palautetaan progressbar
+    progress5.innerHTML = progressBar + nextBar(5);
     return progressBar;
 }
 
-// Viides lasku
+// Viides lasku, sama kaava kuin 1.
 function checkFifth() {
     let rightAnswer = snailMinutes * 3;
 
     if (answer5.value == rightAnswer) {
         result5.innerHTML = right
-        // Tallennetaan ja lisätään progressbariin vihreä palkki oikeasta vastauksesta
         progressBar += progressRight(5);
         progress5.innerHTML = progressBar;
         rightAnswerCounter++;
@@ -300,17 +275,13 @@ function checkFifth() {
             return result5; 
         } else {
             result5.innerHTML = wrong + "<strong>" + rightAnswer + "</strong>.";
-            // Tallennetaan ja lisätään progressbariin punainen palkki väärästä vastauksesta
             progressBar += progressWrong(5);
             progress5.innerHTML = progressBar;
         }
     }
 
-    // next-nappi näkyviin 
-    toggleVisibility("next5", "inline-block");
-
-    // Suljetaan vastausinput ja -nappi
-    toggleAnswer(5, true);
+    disableAnswer(5);
+    toggleVisibility("results", "inline-block");
 
     // Lisätään progressbarin tilanne lopulliseen progressbariin
     progressFinal.innerHTML = progressBar;
@@ -341,34 +312,6 @@ function checkFifth() {
 }
 
 function clearAll() {
-    /*toggleAnswer(1, false);
-    toggleAnswer(2, false);
-    toggleAnswer(3, false);
-    toggleAnswer(4, false);
-    toggleAnswer(5, false);
-
-    progress1.innerHTML = '<div class="progress-bar bg-info" id="progressbar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">1/5</div>';
-    progress2.innerHTML = "";
-    progress3.innerHTML = "";
-    progress4.innerHTML = "";
-    progress5.innerHTML = "";
-    progressFinal.innerHTML = "";
-
-    answer1.value = "";
-    answer2.value = "";
-    answer3.value = "";
-    answer4.value = "";
-    answer5.value = "";
-
-    result1.innerHTML = "";
-    result2.innerHTML = "";
-    result3.innerHTML = "";
-    result4.innerHTML = "";
-    result5.innerHTML = "";
-
-    progressBar = "";
-    feedback.innerHTML = "";
-    rightAnswerCounter = "";*/
     location.reload();
 }
 
