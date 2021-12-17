@@ -3,15 +3,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: rgb(255, 255, 255);
-}
-
-/* Tallennan tähän sivustolla käytettävät värit*/
-.class {
-    background-color:
-     #00B060 #218457 #00733E #36D88E  #61D8A2
-     #FF9500	#BF8430 #A66100, #FFB040 #FFC573
-     #DE0052 #A62A58 #900035 #EE3C7E #EE6B9C;
 }
 
 .container {
@@ -61,13 +52,13 @@ footer {
 }
 
 .fa-carrot {
-    color: orange; 
+    color: #ffa500; 
 }
 
 .navbar-brand {
     font-family: 'Neucha', cursive;
     font-size: 1.5em;
-    color: orange;
+    color: #ffa600;
     padding-bottom: 20px;
     padding-left: 10px;
 }
