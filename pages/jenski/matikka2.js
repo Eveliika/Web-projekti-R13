@@ -281,6 +281,7 @@ function checkFifth() {
     }
 
     disableAnswer(5);
+    // Laitetaan näkyviin results-nappi
     toggleVisibility("results", "inline-block");
 
     // Lisätään progressbarin tilanne lopulliseen progressbariin
@@ -311,6 +312,7 @@ function checkFifth() {
     return progressBar;
 }
 
+// Funktio painikkeelle jolla aloitetaan alusta testi
 function clearAll() {
     location.reload();
 }
