@@ -83,6 +83,7 @@
 
   <!--Matikkasivun sisältö-->
   <div class="container">
+    <!--Testin aloitus ja ohjeet-->
     <section id="startTest">
       <h2>Testaa laskutaitosi</h2>
       <div class="guide">
@@ -92,7 +93,10 @@
         <button type="button" class="btnStart" onclick="startTest()">Aloita testi</button>
       </div>
     </section>
+
+    <!--Tehtävään 1 liittyvät kentät ja painikkeet-->
     <section id="q1">
+      <!--Progress bar tehtävään 1-->
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
           aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%; color: black;">1/5</div>
@@ -104,7 +108,10 @@
         <button type="button" class="btn" id="checkOne" onclick="checkAnswerOne()">Tarkista</button>
       </div>
     </section>
+
+    <!--Tehtävään 2 liittyvät kentät ja painikkeet-->
     <section id="q2">
+      <!--Progress bar tehtävään 2-->
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
           aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%; color: black;">2/5</div>
@@ -116,7 +123,10 @@
         <button type="button" class="btn" id="checkTwo" onclick="checkAnswerTwo()">Tarkista</button>
       </div>
     </section>
+
+    <!--Tehtävään 3 liittyvät kentät ja painikkeet-->
     <section id="q3">
+      <!--Progress bar tehtävään 3-->
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
           aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 60%; color: black;">3/5</div>
@@ -128,7 +138,10 @@
         <button type="button" class="btn" id="checkThree" onclick="checkAnswerThree()">Tarkista</button>
       </div>
     </section>
+
+    <!--Tehtävään 4 liittyvät kentät ja painikkeet-->
     <section id="q4">
+      <!--Progress bar tehtävään 4-->
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
           aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%; color: black;">4/5</div>
@@ -140,7 +153,10 @@
         <button type="button" class="btn" id="checkFour" onclick="checkAnswerFour()">Tarkista</button>
       </div>
     </section>
+
+    <!--Tehtävään 5 liittyvät kentät ja painikkeet-->
     <section id="q5">
+      <!--Progress bar tehtävään 5-->
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
           aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%; color: black;">5/5</div>
@@ -152,11 +168,15 @@
         <button type="button" class="btn" id="checkFive" onclick="checkAnswerFive()">Tarkista</button>
       </div>
     </section>
+
+    <!--Kenttä tuloksia varten-->
     <section id="results" class="results">
       <div>
         <label id="result"></label>
       </div>
     </section>
+
+    <!--Jatka -painikkeet tehtäville 1-4-->
     <section id="next">
       <div>
         <button class="btnNext" onclick="nextQuestion1()" >Jatka</button>
@@ -177,15 +197,21 @@
         <button class="btnNext" onclick="nextQuestion4()">Jatka</button>
       </div>
     </section>
+
+    <!--Lopeta testi -painike-->
     <section id="finishTest">
       <div>
         <button class="btnNext" onclick="finishTest()">Lopeta testi</button>
       </div>
     </section>
+
+    <!--Testin lopetus-->
     <section>
+      <!--Kenttä luokittelulle-->
       <div>
         <label id="classification"></label>
       </div>
+      <!--Yritä uudelleen -painike-->
       <section id="tryAgain">
       <div>
         <button type="button" class="btnTryAgain" onclick="tryAgain()">Yritä uudelleen</button>
@@ -204,7 +230,7 @@
         <td>Jenni Lohi</td>
       </tr>
       <tr>
-        <td>Jenni Visuri</td>
+        <td><strong>Jenni Visuri</strong></td>
       </tr>
       <tr>
         <td>Eveliina Kaarivaara</td>
