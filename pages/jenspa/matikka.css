@@ -6,6 +6,20 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+/* Nav-bar */
+.fa-carrot {
+    color: orange; 
+}
+
+.navbar-brand {
+    font-family: 'Neucha', cursive;
+    font-size: 1.5em;
+    color: orange;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+/* Tehtävä-osio */
 .container {
     font-family: 'Amaranth';
     background-color: #FCE8D7;
@@ -42,6 +56,14 @@ p {
     border-radius: 8px;
     border: 3px solid #F2B752;
     transition-duration: 0.5s;
+}
+
+.progress {
+    margin: auto;
+    width: 700px;
+    height: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 label {
@@ -99,14 +121,6 @@ input:focus {
     margin-bottom: 80px;
 }
 
-.progress {
-    margin: auto;
-    width: 700px;
-    height: 25px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .results {
     padding: 30px;
     margin: auto;
@@ -130,6 +144,7 @@ p {
     padding: 30px 100px 0px 100px;
 }
 
+/* Alatunniste */
 footer {
     height: auto;
     width: 100%;
@@ -140,18 +155,7 @@ footer {
     padding: 10px;
 }
 
-.fa-carrot {
-    color: orange; 
-}
-
-.navbar-brand {
-    font-family: 'Neucha', cursive;
-    font-size: 1.5em;
-    color: orange;
-    padding-bottom: 20px;
-    padding-left: 10px;
-}
-
+/* Responsiivisuus */
 @media screen and (max-width: 992px) {
     .guide {
         width: 80%;
