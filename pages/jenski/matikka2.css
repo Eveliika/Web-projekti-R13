@@ -5,6 +5,21 @@ body {
     min-height: 100vh;
 }
 
+/* Navbar*/
+.navbar-brand {
+    font-family: 'Neucha', cursive;
+    font-size: 1.5em;
+    color: orange;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+/* porkkanalogon väri oranssiksi*/
+.fa-carrot {
+    color: orange; 
+}
+
+
 h1 {
     padding-top: 30px;
     font-family: 'Comfortaa', cursive;
@@ -35,6 +50,7 @@ span {
     font-weight: bold;
 }
 
+/* Sivun tehtäväsisältödivi */
 .container {
     height: 500px;
     background-color: rgb(162, 243, 207);
@@ -52,6 +68,7 @@ span {
     padding: 20px;
 }
 
+/* Containerin sisällä oleva tehtäväsisältödivi*/
 .content {
     background-color: #eefffc;
     padding: 20px;
@@ -62,23 +79,13 @@ span {
     padding-top: 35px;
 }
 
-.fa-carrot {
-    color: orange; 
-}
-
-.navbar-brand {
-    font-family: 'Neucha', cursive;
-    font-size: 1.5em;
-    color: orange;
-    padding-bottom: 20px;
-    padding-left: 10px;
-}
-
+/* Progressbar */
 .progress {
     margin-top: 8px;
     box-shadow: 0px 0px 15px 3px rgb(139, 207, 212) ;
 }
 
+/* Painikkeet */
 .btn-primary {
     background-color: #3aaf6f; 
     border: rgb(0, 38, 255);
@@ -89,10 +96,12 @@ span {
     background-color: rgb(51, 197, 117); 
 }
 
+/* Ensimmäiselle sivulle */
 #startPage {
     padding: 20px;
 }
 
+/* Aloita testi -painike */
 #startExercise {
     padding: 50px;
 }
