@@ -316,6 +316,3 @@ function checkFifth() {
 function clearAll() {
     location.reload();
 }
-
-
-
